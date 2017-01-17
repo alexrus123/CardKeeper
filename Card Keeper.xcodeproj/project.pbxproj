@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */; };
+		FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBF01E2DEE22001E0476 /* ViewController.swift */; };
+		FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBF21E2DEE22001E0476 /* Main.storyboard */; };
+		FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */; };
+		FE34FBF91E2DEE22001E0476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBF81E2DEE22001E0476 /* Assets.xcassets */; };
+		FE34FBFC1E2DEE22001E0476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */; };
+		FE34FC071E2DEE22001E0476 /* Card_KeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC061E2DEE22001E0476 /* Card_KeeperTests.swift */; };
+		FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE34FC031E2DEE22001E0476 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE34FBE31E2DEE22001E0476 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE34FBEA1E2DEE22001E0476;
+			remoteInfo = "Card Keeper";
+		};
+		FE34FC0E1E2DEE22001E0476 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE34FBE31E2DEE22001E0476 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE34FBEA1E2DEE22001E0476;
+			remoteInfo = "Card Keeper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE34FBF01E2DEE22001E0476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE34FBF31E2DEE22001E0476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE34FBF61E2DEE22001E0476 /* Card_Keeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Card_Keeper.xcdatamodel; sourceTree = "<group>"; };
+		FE34FBF81E2DEE22001E0476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE34FBFB1E2DEE22001E0476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE34FBFD1E2DEE22001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE34FC021E2DEE22001E0476 /* Card KeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Card KeeperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE34FC061E2DEE22001E0476 /* Card_KeeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_KeeperTests.swift; sourceTree = "<group>"; };
+		FE34FC081E2DEE22001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE34FC0D1E2DEE22001E0476 /* Card KeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Card KeeperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_KeeperUITests.swift; sourceTree = "<group>"; };
+		FE34FC131E2DEE23001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE34FBE81E2DEE22001E0476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FBFF1E2DEE22001E0476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FC0A1E2DEE22001E0476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE34FBE21E2DEE22001E0476 = {
+			isa = PBXGroup;
+			children = (
+				FE34FBED1E2DEE22001E0476 /* Card Keeper */,
+				FE34FC051E2DEE22001E0476 /* Card KeeperTests */,
+				FE34FC101E2DEE22001E0476 /* Card KeeperUITests */,
+				FE34FBEC1E2DEE22001E0476 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE34FBEC1E2DEE22001E0476 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */,
+				FE34FC021E2DEE22001E0476 /* Card KeeperTests.xctest */,
+				FE34FC0D1E2DEE22001E0476 /* Card KeeperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE34FBED1E2DEE22001E0476 /* Card Keeper */ = {
+			isa = PBXGroup;
+			children = (
+				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
+				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
+				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
+				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
+				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
+				FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */,
+			);
+			path = "Card Keeper";
+			sourceTree = "<group>";
+		};
+		FE34FC051E2DEE22001E0476 /* Card KeeperTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE34FC061E2DEE22001E0476 /* Card_KeeperTests.swift */,
+				FE34FC081E2DEE22001E0476 /* Info.plist */,
+			);
+			path = "Card KeeperTests";
+			sourceTree = "<group>";
+		};
+		FE34FC101E2DEE22001E0476 /* Card KeeperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */,
+				FE34FC131E2DEE23001E0476 /* Info.plist */,
+			);
+			path = "Card KeeperUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE34FBEA1E2DEE22001E0476 /* Card Keeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE34FC161E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card Keeper" */;
+			buildPhases = (
+				FE34FBE71E2DEE22001E0476 /* Sources */,
+				FE34FBE81E2DEE22001E0476 /* Frameworks */,
+				FE34FBE91E2DEE22001E0476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Card Keeper";
+			productName = "Card Keeper";
+			productReference = FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE34FC011E2DEE22001E0476 /* Card KeeperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE34FC191E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperTests" */;
+			buildPhases = (
+				FE34FBFE1E2DEE22001E0476 /* Sources */,
+				FE34FBFF1E2DEE22001E0476 /* Frameworks */,
+				FE34FC001E2DEE22001E0476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE34FC041E2DEE22001E0476 /* PBXTargetDependency */,
+			);
+			name = "Card KeeperTests";
+			productName = "Card KeeperTests";
+			productReference = FE34FC021E2DEE22001E0476 /* Card KeeperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE34FC0C1E2DEE22001E0476 /* Card KeeperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE34FC1C1E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperUITests" */;
+			buildPhases = (
+				FE34FC091E2DEE22001E0476 /* Sources */,
+				FE34FC0A1E2DEE22001E0476 /* Frameworks */,
+				FE34FC0B1E2DEE22001E0476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE34FC0F1E2DEE22001E0476 /* PBXTargetDependency */,
+			);
+			name = "Card KeeperUITests";
+			productName = "Card KeeperUITests";
+			productReference = FE34FC0D1E2DEE22001E0476 /* Card KeeperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE34FBE31E2DEE22001E0476 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Aliaksei Lyskovich";
+				TargetAttributes = {
+					FE34FBEA1E2DEE22001E0476 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8C68XCPWDF;
+						ProvisioningStyle = Automatic;
+					};
+					FE34FC011E2DEE22001E0476 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8C68XCPWDF;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE34FBEA1E2DEE22001E0476;
+					};
+					FE34FC0C1E2DEE22001E0476 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8C68XCPWDF;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE34FBEA1E2DEE22001E0476;
+					};
+				};
+			};
+			buildConfigurationList = FE34FBE61E2DEE22001E0476 /* Build configuration list for PBXProject "Card Keeper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE34FBE21E2DEE22001E0476;
+			productRefGroup = FE34FBEC1E2DEE22001E0476 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE34FBEA1E2DEE22001E0476 /* Card Keeper */,
+				FE34FC011E2DEE22001E0476 /* Card KeeperTests */,
+				FE34FC0C1E2DEE22001E0476 /* Card KeeperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE34FBE91E2DEE22001E0476 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE34FBFC1E2DEE22001E0476 /* LaunchScreen.storyboard in Resources */,
+				FE34FBF91E2DEE22001E0476 /* Assets.xcassets in Resources */,
+				FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FC001E2DEE22001E0476 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FC0B1E2DEE22001E0476 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE34FBE71E2DEE22001E0476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
+				FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */,
+				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FBFE1E2DEE22001E0476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE34FC071E2DEE22001E0476 /* Card_KeeperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE34FC091E2DEE22001E0476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE34FC041E2DEE22001E0476 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE34FBEA1E2DEE22001E0476 /* Card Keeper */;
+			targetProxy = FE34FC031E2DEE22001E0476 /* PBXContainerItemProxy */;
+		};
+		FE34FC0F1E2DEE22001E0476 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE34FBEA1E2DEE22001E0476 /* Card Keeper */;
+			targetProxy = FE34FC0E1E2DEE22001E0476 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE34FBF21E2DEE22001E0476 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE34FBF31E2DEE22001E0476 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE34FBFB1E2DEE22001E0476 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE34FC141E2DEE23001E0476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE34FC151E2DEE23001E0476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE34FC171E2DEE23001E0476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card Keeper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-Keeper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FE34FC181E2DEE23001E0476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card Keeper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-Keeper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FE34FC1A1E2DEE23001E0476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card KeeperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-KeeperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Card Keeper.app/Card Keeper";
+			};
+			name = Debug;
+		};
+		FE34FC1B1E2DEE23001E0476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card KeeperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-KeeperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Card Keeper.app/Card Keeper";
+			};
+			name = Release;
+		};
+		FE34FC1D1E2DEE23001E0476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card KeeperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-KeeperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Card Keeper";
+			};
+			name = Debug;
+		};
+		FE34FC1E1E2DEE23001E0476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8C68XCPWDF;
+				INFOPLIST_FILE = "Card KeeperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "qatsys.com.Card-KeeperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Card Keeper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE34FBE61E2DEE22001E0476 /* Build configuration list for PBXProject "Card Keeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE34FC141E2DEE23001E0476 /* Debug */,
+				FE34FC151E2DEE23001E0476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE34FC161E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card Keeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE34FC171E2DEE23001E0476 /* Debug */,
+				FE34FC181E2DEE23001E0476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE34FC191E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE34FC1A1E2DEE23001E0476 /* Debug */,
+				FE34FC1B1E2DEE23001E0476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE34FC1C1E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE34FC1D1E2DEE23001E0476 /* Debug */,
+				FE34FC1E1E2DEE23001E0476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE34FBF61E2DEE22001E0476 /* Card_Keeper.xcdatamodel */,
+			);
+			currentVersion = FE34FBF61E2DEE22001E0476 /* Card_Keeper.xcdatamodel */;
+			path = Card_Keeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FE34FBE31E2DEE22001E0476 /* Project object */;
+}
