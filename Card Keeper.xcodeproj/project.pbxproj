@@ -15,6 +15,7 @@
 		FE34FBFC1E2DEE22001E0476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */; };
 		FE34FC071E2DEE22001E0476 /* Card_KeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC061E2DEE22001E0476 /* Card_KeeperTests.swift */; };
 		FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */; };
+		FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FE34FC0D1E2DEE22001E0476 /* Card KeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Card KeeperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_KeeperUITests.swift; sourceTree = "<group>"; };
 		FE34FC131E2DEE23001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
 				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
 				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
@@ -267,6 +270,7 @@
 			files = (
 				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
 				FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */,
+				FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

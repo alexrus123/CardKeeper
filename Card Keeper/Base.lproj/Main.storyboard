@@ -87,7 +87,7 @@
         <!--AddCardVC-->
         <scene sceneID="znE-u7-ij2">
             <objects>
-                <viewController id="D30-2p-X6i" userLabel="AddCardVC" sceneMemberID="viewController">
+                <viewController id="D30-2p-X6i" userLabel="AddCardVC" customClass="AddCardVC" customModule="Card_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ft-pB-y9L"/>
                         <viewControllerLayoutGuide type="bottom" id="8cg-fT-srP"/>
@@ -119,6 +119,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-V7-BP7">
                                         <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="SaveNow:" destination="D30-2p-X6i" eventType="touchUpInside" id="75G-5b-Vwv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -141,6 +144,10 @@
                             <constraint firstItem="ZXa-wS-9NZ" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leading" id="vXc-RH-6TM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
+                        <outlet property="saveCardBttn" destination="sJ5-V7-BP7" id="dRm-vm-oYC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfa-ZL-01F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
