@@ -131,6 +131,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-zG-Qkq">
+                                <rect key="frame" x="164" y="223" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="print"/>
+                                <connections>
+                                    <action selector="testPrint:" destination="D30-2p-X6i" eventType="touchUpInside" id="dfx-EG-pVo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -147,6 +155,7 @@
                     <connections>
                         <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
                         <outlet property="saveCardBttn" destination="sJ5-V7-BP7" id="dRm-vm-oYC"/>
+                        <outlet property="testBttn" destination="ec6-zG-Qkq" id="0dH-oV-PFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfa-ZL-01F" userLabel="First Responder" sceneMemberID="firstResponder"/>
