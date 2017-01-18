@@ -16,6 +16,7 @@
 		FE34FC071E2DEE22001E0476 /* Card_KeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC061E2DEE22001E0476 /* Card_KeeperTests.swift */; };
 		FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */; };
 		FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */; };
+		FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC211E2F530B001E0476 /* CDhelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_KeeperUITests.swift; sourceTree = "<group>"; };
 		FE34FC131E2DEE23001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		FE34FC211E2F530B001E0476 /* CDhelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDhelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
 				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
 				FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */,
+				FE34FC211E2F530B001E0476 /* CDhelpers.swift */,
 			);
 			path = "Card Keeper";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
 				FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */,
 				FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */,
+				FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
