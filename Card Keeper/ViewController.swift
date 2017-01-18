@@ -5,7 +5,7 @@
 //  Created by Aliaksei Lyskovich on 1/16/17.
 //  Copyright © 2017 Aliaksei Lyskovich. All rights reserved.
 //
-// Starting
+// Starting1
 import UIKit
 
 class ViewController: UIViewController {
