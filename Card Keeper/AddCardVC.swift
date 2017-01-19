@@ -20,7 +20,19 @@ class AddCardVC: UIViewController {
     @IBOutlet weak var cardNumberField: UITextField!
     
     @IBAction func testPrint(_ sender: UIButton) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
         
+        do {
+            let results = try managedObjectContext.fetch(fetchRequest)
+            let  Locations = results as! [Cards]
+            
+            for location in Locations {
+                print(String(location.cardNumber))
+            }
+        } catch let error as NSError {
+            //print("Could not fetch \(error)”),
+            print(error.code)
+        }
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {

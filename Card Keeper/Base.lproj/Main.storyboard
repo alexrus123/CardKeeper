@@ -28,6 +28,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zB-Df-jZ0" userLabel="CardsView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="528"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="p7i-6h-CCI"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="KIE-Bd-Qa3"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -79,6 +83,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mCz-hG-NNk" secondAttribute="trailing" constant="16" id="yXa-nb-Wws"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="3zB-Df-jZ0" id="uPs-Pr-BGS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +139,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-zG-Qkq">
-                                <rect key="frame" x="164" y="223" width="46" height="30"/>
+                                <rect key="frame" x="164" y="180" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="print"/>
                                 <connections>
