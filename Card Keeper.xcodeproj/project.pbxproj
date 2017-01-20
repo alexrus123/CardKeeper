@@ -17,6 +17,7 @@
 		FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */; };
 		FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */; };
 		FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC211E2F530B001E0476 /* CDhelpers.swift */; };
+		FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF558281E31F4AB00C254F0 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FE34FC131E2DEE23001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		FE34FC211E2F530B001E0476 /* CDhelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDhelpers.swift; sourceTree = "<group>"; };
+		FEF558281E31F4AB00C254F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				FEF558281E31F4AB00C254F0 /* Utils.swift */,
 				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
 				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */,
 				FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
+				FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +528,7 @@
 				FE34FC181E2DEE23001E0476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE34FC191E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +537,7 @@
 				FE34FC1B1E2DEE23001E0476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE34FC1C1E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +546,7 @@
 				FE34FC1E1E2DEE23001E0476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

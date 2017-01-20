@@ -16,13 +16,18 @@ class AddCardVC: UIViewController {
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var cardNumberField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
     @IBAction func testPrint(_ sender: UIButton) {
-        
+        CDhelper().fetchCoreData()
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
-        CDhelper.saveToCoreData(cardNumberVal: Int64(cardNumberField.text!)!)
+        CDhelper().saveToCoreData(cardNumberVal: Int64(cardNumberField.text!)!)
     }
     
 }

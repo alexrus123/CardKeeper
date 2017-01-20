@@ -12,7 +12,7 @@ import UIKit
 
 class CDhelper {
     
-    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func fetchCoreData(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
