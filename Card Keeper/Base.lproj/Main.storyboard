@@ -120,16 +120,6 @@
                                     </navigationBar>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-zG-Qkq">
-                                <rect key="frame" x="164" y="180" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Jma-Nf-PJt"/>
-                                </constraints>
-                                <state key="normal" title="print"/>
-                                <connections>
-                                    <action selector="testPrint:" destination="D30-2p-X6i" eventType="touchUpInside" id="dfx-EG-pVo"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-V7-BP7">
                                 <rect key="frame" x="16" y="580" width="343" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,18 +132,53 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name your card" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-oc-ySp">
-                                <rect key="frame" x="16" y="72" width="343" height="43"/>
+                                <rect key="frame" x="16" y="262" width="343" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-Uy-9Ol">
-                                <rect key="frame" x="16" y="135" width="343" height="43"/>
+                                <rect key="frame" x="16" y="333" width="343" height="43"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-zG-Qkq">
+                                <rect key="frame" x="164" y="542" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Jma-Nf-PJt"/>
+                                </constraints>
+                                <state key="normal" title="print"/>
+                                <connections>
+                                    <action selector="testPrint:" destination="D30-2p-X6i" eventType="touchUpInside" id="dfx-EG-pVo"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EBc-Cb-FDS">
+                                <rect key="frame" x="16" y="72" width="343" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="43v-8e-1nG">
+                                    <size key="itemSize" width="90" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="bCx-qU-mLc" customClass="MyCollectionViewCell" customModule="Card_Keeper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="D30-2p-X6i" id="yME-on-zWH"/>
+                                    <outlet property="delegate" destination="D30-2p-X6i" id="5ji-xC-Wg8"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -162,10 +187,10 @@
                             <constraint firstAttribute="bottom" secondItem="sJ5-V7-BP7" secondAttribute="bottom" constant="37" id="El6-xF-lzx"/>
                             <constraint firstItem="5cb-Uy-9Ol" firstAttribute="leading" secondItem="sJ5-V7-BP7" secondAttribute="leading" id="F30-gN-53X"/>
                             <constraint firstItem="ZXa-wS-9NZ" firstAttribute="top" secondItem="9ft-pB-y9L" secondAttribute="bottom" id="OdC-GG-2Ja"/>
-                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="top" secondItem="ec6-zG-Qkq" secondAttribute="bottom" constant="-75" id="gfE-9V-nPy"/>
+                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="top" secondItem="ec6-zG-Qkq" secondAttribute="bottom" constant="-239" id="gfE-9V-nPy"/>
                             <constraint firstItem="5cb-Uy-9Ol" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leadingMargin" id="gw1-lU-olN"/>
                             <constraint firstItem="5cb-Uy-9Ol" firstAttribute="centerX" secondItem="ZXa-wS-9NZ" secondAttribute="centerX" id="hv2-qW-2yi"/>
-                            <constraint firstItem="ec6-zG-Qkq" firstAttribute="top" secondItem="cWU-i4-IUC" secondAttribute="top" constant="180" id="tr2-x8-c2D"/>
+                            <constraint firstItem="ec6-zG-Qkq" firstAttribute="top" secondItem="cWU-i4-IUC" secondAttribute="top" constant="542" id="tr2-x8-c2D"/>
                             <constraint firstItem="5cb-Uy-9Ol" firstAttribute="trailing" secondItem="sJ5-V7-BP7" secondAttribute="trailing" id="vV3-ww-azJ"/>
                             <constraint firstItem="ZXa-wS-9NZ" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leading" id="vXc-RH-6TM"/>
                         </constraints>
@@ -173,6 +198,7 @@
                     <connections>
                         <outlet property="cardNameField" destination="NbH-oc-ySp" id="Imp-kz-0gk"/>
                         <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
+                        <outlet property="collectionView" destination="EBc-Cb-FDS" id="7sU-3e-deB"/>
                         <outlet property="saveCardBttn" destination="sJ5-V7-BP7" id="dRm-vm-oYC"/>
                         <outlet property="testBttn" destination="ec6-zG-Qkq" id="0dH-oV-PFp"/>
                     </connections>
