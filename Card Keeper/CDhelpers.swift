@@ -14,23 +14,26 @@ class CDhelper {
     
     var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func fetchCoreData(){
+    func fetchCoreData()->[Cards]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
-        
+        var allCards = [Cards]()
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
-            let  Locations = results as! [Cards]
+            allCards = results as! [Cards]
             
-            for location in Locations {
-                print(String(location.cardNumber))
+            for singleCard in allCards {
+                print("Card Name: " + singleCard.cardName!)
+                print("Card Number: " + String(singleCard.cardNumber))
             }
+            print("Total cards: " + String(allCards.count))
         } catch let error as NSError {
             //print("Could not fetch \(error)”),
             print(error.code)
         }
+        return allCards
     }
     
-    func saveToCoreData(cardNumberVal: Int64){
+    func saveToCoreData(cardName: String, cardNumberVal: Int64){
         let entityDescription =
             NSEntityDescription.entity(forEntityName: "Cards",
                                        in: managedObjectContext)
@@ -39,6 +42,7 @@ class CDhelper {
                                 insertInto: managedObjectContext)
         
         cardDetails.cardNumber = cardNumberVal
+        cardDetails.cardName = cardName
 
         //cardDetails.cardNumber = Int64(cardNumberField.text!)!
         

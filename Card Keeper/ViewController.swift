@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let animals = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
     let cellReuseIdentifier = "cell"
+    var returnedCards = CDhelper().fetchCoreData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.animals.count
+        return returnedCards.count
     }
     
     // create a cell for each table view row
@@ -38,8 +38,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
         // set the text from the data model
-        cell.textLabel?.text = self.animals[indexPath.row]
-        
+        //cell.textLabel?.text = self.animals[indexPath.row]
+        cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!+"-"+String(describing: self.returnedCards[indexPath.row].cardNumber)
         return cell
     }
     
