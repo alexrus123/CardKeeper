@@ -179,6 +179,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFc-Bu-2f9">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-35-8LW">
+                                                    <rect key="frame" x="47" y="18" width="53" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -189,6 +193,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cellImageView" destination="FFc-Bu-2f9" id="pyo-S1-NYU"/>
+                                            <outlet property="checkboxView" destination="z1f-35-8LW" id="xua-nK-M3z"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

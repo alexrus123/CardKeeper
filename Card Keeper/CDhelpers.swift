@@ -22,8 +22,9 @@ class CDhelper {
             allCards = results as! [Cards]
             
             for singleCard in allCards {
-                //print("Card Name: " + singleCard.cardName!)
-                //print("Card Number: " + String(singleCard.cardNumber))
+                print("Card Provider: " + singleCard.cardProvider!)
+                print("Card Name: " + singleCard.cardName!)
+                print("Card Number: " + String(singleCard.cardNumber))
             }
             print("Total cards: " + String(allCards.count))
         } catch let error as NSError {
@@ -33,7 +34,7 @@ class CDhelper {
         return allCards
     }
     
-    func saveToCoreData(cardName: String, cardNumberVal: Int64){
+    func saveToCoreData(cardProvider: String, cardName: String, cardNumberVal: Int64){
         let entityDescription =
             NSEntityDescription.entity(forEntityName: "Cards",
                                        in: managedObjectContext)
@@ -41,6 +42,7 @@ class CDhelper {
         let cardDetails = Cards(entity: entityDescription!,
                                 insertInto: managedObjectContext)
         
+        cardDetails.cardProvider = cardProvider
         cardDetails.cardNumber = cardNumberVal
         cardDetails.cardName = cardName
 
