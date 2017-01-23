@@ -54,8 +54,8 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         // get a reference to our storyboard cell
         //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyImageCollection
-        //cell.cellImageView?.image = UIImage(named: ProviderList().allProvidersArray[indexPath.item])
-        cell.backgroundColor = UIColor.red
+        cell.cellImageView?.image = UIImage(named: ProviderList().allProvidersArray[indexPath.item])
+        //cell.backgroundColor = UIColor.red
         return cell
     }
     
