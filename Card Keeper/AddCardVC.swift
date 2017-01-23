@@ -12,6 +12,7 @@ import CoreData
 
 class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var checkboxView: UIImageView!
 }
 
 class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -21,6 +22,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
+    var selectedCardType : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
-        CDhelper().saveToCoreData(cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
+        CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
     }
     
     let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
@@ -63,8 +65,20 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected: " + String(indexPath.item))
+        selectedCardType = indexPath.item
+        print("You selected: " + String(selectedCardType))
         
+        let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
+        cell.checkboxView.image = UIImage(named: "Checkbox")
+        //cell?.backgroundColor = UIColor.magenta
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        // handle tap events
+        
+        print("You deselected: " + String(indexPath.item))
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
+        cell.checkboxView.image = nil
         //cell?.backgroundColor = UIColor.magenta
     }
 
