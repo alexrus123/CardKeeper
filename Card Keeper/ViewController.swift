@@ -40,7 +40,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // set the text from the data model
         //cell.textLabel?.text = self.animals[indexPath.row]
         cell.imageView?.image = UIImage(named: "CVS")
+        if(returnedCards.count==0){
+            cell.textLabel!.text="No cards"}
+        else{
         cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!+"-"+String(describing: self.returnedCards[indexPath.row].cardNumber)
+        }
         return cell
     }
     

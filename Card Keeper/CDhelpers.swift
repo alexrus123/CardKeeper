@@ -22,8 +22,8 @@ class CDhelper {
             allCards = results as! [Cards]
             
             for singleCard in allCards {
-                print("Card Name: " + singleCard.cardName!)
-                print("Card Number: " + String(singleCard.cardNumber))
+                //print("Card Name: " + singleCard.cardName!)
+                //print("Card Number: " + String(singleCard.cardNumber))
             }
             print("Total cards: " + String(allCards.count))
         } catch let error as NSError {

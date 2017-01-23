@@ -10,6 +10,6 @@ import Foundation
 
 class ProviderList{
     
-    var allProvidersArray = ["CVS", "SAFEWAY", "BESTBUY"]
+    var allProvidersArray = ["CVS", "SAFEWAY", "BESTBUY", "ALBERTSON", "WHOLEFOODS", "RALPHS", "AUTOZONE", "FOOD4LESS", "KROGER", "PUBLIX"]
     
 }

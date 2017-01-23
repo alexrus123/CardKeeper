@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import CoreData
 
+class MyImageCollection: UICollectionViewCell{
+    @IBOutlet weak var cellImageView: UIImageView!
+}
+
 class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var testBttn: UIButton!
     
@@ -21,7 +25,8 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround()
+        //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
+        //self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func testPrint(_ sender: UIButton) {
@@ -48,13 +53,9 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         
         // get a reference to our storyboard cell
         //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath)
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        //cell.myLabel.text = String(ProviderList().allProvidersArray[indexPath.item])
-        cell.backgroundColor=UIColor(patternImage:(UIImage(named:"CVS"))!)
-        
-        //cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyImageCollection
+        //cell.cellImageView?.image = UIImage(named: ProviderList().allProvidersArray[indexPath.item])
+        cell.backgroundColor = UIColor.red
         return cell
     }
     
@@ -62,7 +63,9 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        print("You selected: " + String(indexPath.item))
+        
+        //cell?.backgroundColor = UIColor.magenta
     }
 
 }
