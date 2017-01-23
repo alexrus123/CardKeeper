@@ -28,6 +28,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zB-Df-jZ0" userLabel="CardsView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="528"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="p7i-6h-CCI"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="KIE-Bd-Qa3"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -79,6 +83,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mCz-hG-NNk" secondAttribute="trailing" constant="16" id="yXa-nb-Wws"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="3zB-Df-jZ0" id="uPs-Pr-BGS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +94,7 @@
         <!--AddCardVC-->
         <scene sceneID="znE-u7-ij2">
             <objects>
-                <viewController id="D30-2p-X6i" userLabel="AddCardVC" sceneMemberID="viewController">
+                <viewController id="D30-2p-X6i" userLabel="AddCardVC" customClass="AddCardVC" customModule="Card_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ft-pB-y9L"/>
                         <viewControllerLayoutGuide type="bottom" id="8cg-fT-srP"/>
@@ -113,34 +120,112 @@
                                     </navigationBar>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yAB-rn-VUO">
-                                <rect key="frame" x="170" y="318" width="34" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-V7-BP7">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-Uy-9Ol">
-                                <rect key="frame" x="16" y="261" width="343" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-V7-BP7">
+                                <rect key="frame" x="16" y="580" width="343" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Si9-zT-2P6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveNow:" destination="D30-2p-X6i" eventType="touchUpInside" id="75G-5b-Vwv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name your card" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-oc-ySp">
+                                <rect key="frame" x="16" y="262" width="343" height="43"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-Uy-9Ol">
+                                <rect key="frame" x="16" y="333" width="343" height="43"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-zG-Qkq">
+                                <rect key="frame" x="164" y="542" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="DJT-S4-TGa"/>
+                                </constraints>
+                                <state key="normal" title="print"/>
+                                <connections>
+                                    <action selector="testPrint:" destination="D30-2p-X6i" eventType="touchUpInside" id="dfx-EG-pVo"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EBc-Cb-FDS">
+                                <rect key="frame" x="16" y="72" width="343" height="182"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="GYt-Bd-XJm"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="43v-8e-1nG">
+                                    <size key="itemSize" width="100" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="cell1" id="bCx-qU-mLc" customClass="MyImageCollection" customModule="Card_Keeper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFc-Bu-2f9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="FFc-Bu-2f9" secondAttribute="bottom" id="G7y-h3-5mX"/>
+                                            <constraint firstItem="FFc-Bu-2f9" firstAttribute="top" secondItem="bCx-qU-mLc" secondAttribute="top" id="UMn-gZ-gBw"/>
+                                            <constraint firstAttribute="trailing" secondItem="FFc-Bu-2f9" secondAttribute="trailing" id="pMk-M2-wig"/>
+                                            <constraint firstItem="FFc-Bu-2f9" firstAttribute="leading" secondItem="bCx-qU-mLc" secondAttribute="leading" id="u0J-jb-7tU"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="FFc-Bu-2f9" id="pyo-S1-NYU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="D30-2p-X6i" id="yME-on-zWH"/>
+                                    <outlet property="delegate" destination="D30-2p-X6i" id="5ji-xC-Wg8"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ZXa-wS-9NZ" secondAttribute="trailing" id="6aN-6m-4lQ"/>
-                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="centerX" secondItem="yAB-rn-VUO" secondAttribute="centerX" id="8dU-g6-vYQ"/>
-                            <constraint firstItem="ZXa-wS-9NZ" firstAttribute="top" secondItem="9ft-pB-y9L" secondAttribute="bottom" id="OdC-GG-2Ja"/>
-                            <constraint firstItem="yAB-rn-VUO" firstAttribute="top" secondItem="5cb-Uy-9Ol" secondAttribute="bottom" constant="27" id="PyF-kA-KCs"/>
-                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leadingMargin" id="gw1-lU-olN"/>
-                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="centerX" secondItem="ZXa-wS-9NZ" secondAttribute="centerX" id="hv2-qW-2yi"/>
-                            <constraint firstItem="yAB-rn-VUO" firstAttribute="centerY" secondItem="cWU-i4-IUC" secondAttribute="centerY" id="mNz-RN-Ptr"/>
-                            <constraint firstItem="ZXa-wS-9NZ" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leading" id="vXc-RH-6TM"/>
+                            <constraint firstItem="NbH-oc-ySp" firstAttribute="top" secondItem="EBc-Cb-FDS" secondAttribute="bottom" constant="8" symbolic="YES" id="4DH-05-puq"/>
+                            <constraint firstItem="ZXa-wS-9NZ" firstAttribute="top" secondItem="9ft-pB-y9L" secondAttribute="bottom" id="7Ag-EM-LHT"/>
+                            <constraint firstItem="EBc-Cb-FDS" firstAttribute="leading" secondItem="NbH-oc-ySp" secondAttribute="leading" id="CFE-E1-ibU"/>
+                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="trailing" secondItem="sJ5-V7-BP7" secondAttribute="trailing" id="KpK-ep-01D"/>
+                            <constraint firstItem="EBc-Cb-FDS" firstAttribute="top" secondItem="ZXa-wS-9NZ" secondAttribute="bottom" constant="8" symbolic="YES" id="MDA-LC-DA6"/>
+                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="top" secondItem="NbH-oc-ySp" secondAttribute="bottom" constant="28" id="QA5-cR-j4s"/>
+                            <constraint firstItem="NbH-oc-ySp" firstAttribute="leading" secondItem="5cb-Uy-9Ol" secondAttribute="leading" id="VDs-r6-j0n"/>
+                            <constraint firstItem="EBc-Cb-FDS" firstAttribute="trailing" secondItem="NbH-oc-ySp" secondAttribute="trailing" id="YkT-gt-5PB"/>
+                            <constraint firstItem="NbH-oc-ySp" firstAttribute="trailing" secondItem="5cb-Uy-9Ol" secondAttribute="trailing" id="efA-xY-s5t"/>
+                            <constraint firstItem="sJ5-V7-BP7" firstAttribute="top" secondItem="ec6-zG-Qkq" secondAttribute="bottom" constant="8" symbolic="YES" id="f9F-hO-gl8"/>
+                            <constraint firstItem="ZXa-wS-9NZ" firstAttribute="centerX" secondItem="EBc-Cb-FDS" secondAttribute="centerX" id="hcw-6F-Uqk"/>
+                            <constraint firstItem="EBc-Cb-FDS" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leadingMargin" id="i2P-aA-O0l"/>
+                            <constraint firstItem="ec6-zG-Qkq" firstAttribute="centerX" secondItem="sJ5-V7-BP7" secondAttribute="centerX" id="kdZ-MY-QLo"/>
+                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="leading" secondItem="sJ5-V7-BP7" secondAttribute="leading" id="m7h-cN-U5l"/>
+                            <constraint firstItem="ZXa-wS-9NZ" firstAttribute="leading" secondItem="cWU-i4-IUC" secondAttribute="leading" id="qvj-Hl-MY3"/>
+                            <constraint firstItem="8cg-fT-srP" firstAttribute="top" secondItem="sJ5-V7-BP7" secondAttribute="bottom" constant="37" id="u3Q-Wr-4WZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ZXa-wS-9NZ" secondAttribute="trailing" id="ypk-we-gzV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardNameField" destination="NbH-oc-ySp" id="Imp-kz-0gk"/>
+                        <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
+                        <outlet property="collectionView" destination="EBc-Cb-FDS" id="7sU-3e-deB"/>
+                        <outlet property="saveCardBttn" destination="sJ5-V7-BP7" id="dRm-vm-oYC"/>
+                        <outlet property="testBttn" destination="ec6-zG-Qkq" id="0dH-oV-PFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfa-ZL-01F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
