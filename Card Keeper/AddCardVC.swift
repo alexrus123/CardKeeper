@@ -55,10 +55,6 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         }
     }
     
-    @IBAction func testPrint(_ sender: UIButton) {
-        //CDhelper().fetchCoreData()
-    }
-    
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
