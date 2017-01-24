@@ -39,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE1CBD591E37302A00873C1C /* CardKeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardKeeper-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE34FBF01E2DEE22001E0476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 		FE34FBED1E2DEE22001E0476 /* Card Keeper */ = {
 			isa = PBXGroup;
 			children = (
-				FE1CBD591E37302A00873C1C /* CardKeeper-Bridging-Header.h */,
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
