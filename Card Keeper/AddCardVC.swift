@@ -34,7 +34,7 @@ extension UIViewController: UITextFieldDelegate{
         textField.inputAccessoryView = toolBar
     }
     func nextPressed(){
-        //view.endEditing(true)
+        //view.endEditing(true)1
         AddCardVC().checkr()
     }
     func previousPressed(){
