@@ -45,7 +45,7 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
+class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
