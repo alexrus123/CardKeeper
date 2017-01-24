@@ -15,26 +15,93 @@ class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var checkboxView: UIImageView!
 }
 
+extension UIViewController: UITextFieldDelegate{
+
+    func addToolBar(textField: UITextField){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(UIViewController.donePressed))
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.nextPressed))
+        let previousButton = UIBarButtonItem(title: "Prev", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.previousPressed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([previousButton, nextButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolBar
+    }
+    func nextPressed(){
+        //view.endEditing(true)1
+        AddCardVC().checkr()
+    }
+    func previousPressed(){
+        view.endEditing(true)
+    }
+    func donePressed(){
+        view.endEditing(true)
+    }
+}
+
 class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    @IBOutlet weak var testBttn: UIButton!
-    
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
     var selectedCardType : Int = 0
+    var currentTextField = UITextField()
+    
+    func checkr(){
+        print("did")
+        print(String(describing: currentTextField.tag))
+        if currentTextField.tag == 1{
+            self.cardNumberField.becomeFirstResponder()
+        }
+        if currentTextField.tag == 2{
+            self.cardNameField.becomeFirstResponder()
+        }
+    }
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.currentTextField = textField
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addToolBar(textField: cardNameField)
+        addToolBar(textField: cardNumberField)
+        currentTextField.delegate = self
+        /*
+         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+        */
         //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
         //self.hideKeyboardWhenTappedAround()
     }
-    
-    @IBAction func testPrint(_ sender: UIButton) {
-        //CDhelper().fetchCoreData()
+    /*
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+        
     }
     
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    */
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
