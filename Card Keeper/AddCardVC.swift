@@ -74,21 +74,20 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         addToolBar(textField: cardNameField)
         addToolBar(textField: cardNumberField)
         currentTextField.delegate = self
-        /*
-         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
-        */
+ 
         //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
         //self.hideKeyboardWhenTappedAround()
     }
-    /*
+    
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height/2
             }
         }
         
@@ -97,11 +96,11 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height/2
             }
         }
     }
-    */
+    
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
