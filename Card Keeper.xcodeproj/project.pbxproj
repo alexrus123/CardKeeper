@@ -39,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE1CBD541E372A0300873C1C /* BSKeyboardControls */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BSKeyboardControls; path = "../../../Downloads/BSKeyboardControls-master/BSKeyboardControls"; sourceTree = "<group>"; };
 		FE1CBD591E37302A00873C1C /* CardKeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardKeeper-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,14 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE1CBD531E372A0300873C1C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE1CBD541E372A0300873C1C /* BSKeyboardControls */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FE34FBE21E2DEE22001E0476 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +92,6 @@
 				FE34FC051E2DEE22001E0476 /* Card KeeperTests */,
 				FE34FC101E2DEE22001E0476 /* Card KeeperUITests */,
 				FE34FBEC1E2DEE22001E0476 /* Products */,
-				FE1CBD531E372A0300873C1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
