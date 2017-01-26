@@ -104,9 +104,6 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
 
-
-
-        
         addToolBar(textField: cardNameField)
         addToolBar(textField: cardNumberField)
         currentTextField.delegate = self
