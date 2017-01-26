@@ -15,8 +15,7 @@ class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var checkboxView: UIImageView!
 }
 
-extension UITextField
-{
+extension UITextField{
     func setBottomBorder() {
         self.borderStyle = .none
         self.layer.backgroundColor = UIColor.white.cgColor
@@ -29,6 +28,7 @@ extension UITextField
     }
     
 }
+
 
 extension UIViewController: UITextFieldDelegate{
 
@@ -60,7 +60,7 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AddCardVC: UIScrollView, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
@@ -69,6 +69,14 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     var selectedCardType : Int = 0
     var currentTextField = UITextField()
+    
+    func textFieldDidChange(textField: UITextField) {
+        if cardNumberField.text == "" || cardNameField.text == ""{
+            saveCardBttn.isEnabled = false
+        } else {
+            saveCardBttn.isEnabled = true
+        }
+    }
     
     func checkr(){
         print("did")
@@ -87,6 +95,12 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cardNameField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
+        cardNumberField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
+        saveCardBttn.isEnabled = false
+
+
         
         addToolBar(textField: cardNameField)
         addToolBar(textField: cardNumberField)

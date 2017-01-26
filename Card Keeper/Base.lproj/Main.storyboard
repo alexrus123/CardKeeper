@@ -115,6 +115,7 @@
                                                         <segue destination="BYZ-38-t0r" kind="show" id="mRD-YR-3De"/>
                                                     </connections>
                                                 </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="camera" id="OXb-oS-UoW"/>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -180,17 +181,8 @@
                                     <outlet property="delegate" destination="D30-2p-X6i" id="5ji-xC-Wg8"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name your card" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-oc-ySp">
-                                <rect key="frame" x="16" y="393" width="343" height="27"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                                <connections>
-                                    <outlet property="delegate" destination="D30-2p-X6i" id="l4l-29-ECd"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-Uy-9Ol">
-                                <rect key="frame" x="16" y="451" width="343" height="27"/>
+                                <rect key="frame" x="16" y="350" width="343" height="27"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
@@ -199,14 +191,23 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-Ek-jp2">
-                                <rect key="frame" x="16" y="297" width="343" height="60"/>
+                                <rect key="frame" x="16" y="297" width="343" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="bzW-M1-RON"/>
+                                    <constraint firstAttribute="height" constant="45" id="bzW-M1-RON"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name your card" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-oc-ySp">
+                                <rect key="frame" x="16" y="404" width="343" height="27"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="D30-2p-X6i" id="l4l-29-ECd"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -217,16 +218,16 @@
                             <constraint firstItem="ZXa-wS-9NZ" firstAttribute="top" secondItem="9ft-pB-y9L" secondAttribute="bottom" id="AZ5-7W-pSP"/>
                             <constraint firstItem="EBc-Cb-FDS" firstAttribute="top" secondItem="ZXa-wS-9NZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Agc-aq-Zsr"/>
                             <constraint firstItem="waJ-Ek-jp2" firstAttribute="top" secondItem="EBc-Cb-FDS" secondAttribute="bottom" constant="8" id="NIZ-yU-XbR"/>
-                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="top" secondItem="NbH-oc-ySp" secondAttribute="bottom" constant="31" id="OwI-WO-uur"/>
+                            <constraint firstItem="5cb-Uy-9Ol" firstAttribute="top" secondItem="NbH-oc-ySp" secondAttribute="bottom" constant="-81" id="OwI-WO-uur"/>
                             <constraint firstItem="NbH-oc-ySp" firstAttribute="trailing" secondItem="5cb-Uy-9Ol" secondAttribute="trailing" id="Skf-Nu-gZf"/>
                             <constraint firstItem="EBc-Cb-FDS" firstAttribute="trailing" secondItem="waJ-Ek-jp2" secondAttribute="trailing" id="WbA-EH-7Un"/>
                             <constraint firstItem="EBc-Cb-FDS" firstAttribute="leading" secondItem="waJ-Ek-jp2" secondAttribute="leading" id="X0k-Bk-mLf"/>
                             <constraint firstAttribute="trailing" secondItem="ZXa-wS-9NZ" secondAttribute="trailing" id="Y2N-6e-Jb8"/>
                             <constraint firstItem="ZXa-wS-9NZ" firstAttribute="centerX" secondItem="EBc-Cb-FDS" secondAttribute="centerX" id="aQX-Ed-GlU"/>
-                            <constraint firstItem="NbH-oc-ySp" firstAttribute="centerY" secondItem="cWU-i4-IUC" secondAttribute="centerY" constant="73" id="fk7-dX-WcO"/>
+                            <constraint firstItem="NbH-oc-ySp" firstAttribute="centerY" secondItem="cWU-i4-IUC" secondAttribute="centerY" constant="84" id="fk7-dX-WcO"/>
                             <constraint firstItem="waJ-Ek-jp2" firstAttribute="leading" secondItem="NbH-oc-ySp" secondAttribute="leading" id="goj-e9-HDQ"/>
                             <constraint firstItem="NbH-oc-ySp" firstAttribute="leading" secondItem="5cb-Uy-9Ol" secondAttribute="leading" id="iXy-qE-0lz"/>
-                            <constraint firstItem="NbH-oc-ySp" firstAttribute="top" secondItem="waJ-Ek-jp2" secondAttribute="bottom" constant="36" id="n98-gd-fWE"/>
+                            <constraint firstItem="NbH-oc-ySp" firstAttribute="top" secondItem="waJ-Ek-jp2" secondAttribute="bottom" constant="62" id="n98-gd-fWE"/>
                             <constraint firstItem="waJ-Ek-jp2" firstAttribute="trailing" secondItem="NbH-oc-ySp" secondAttribute="trailing" id="o8Y-xQ-ffc"/>
                             <constraint firstItem="5cb-Uy-9Ol" firstAttribute="trailing" secondItem="sJ5-V7-BP7" secondAttribute="trailing" id="ocE-9w-WON"/>
                         </constraints>
