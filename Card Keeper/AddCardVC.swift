@@ -60,15 +60,17 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIScrollView, UICollectionViewDataSource, UICollectionViewDelegate {
+class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
     
     var selectedCardType : Int = 0
     var currentTextField = UITextField()
+    
     
     func textFieldDidChange(textField: UITextField) {
         if cardNumberField.text == "" || cardNameField.text == ""{
@@ -99,6 +101,9 @@ class AddCardVC: UIScrollView, UICollectionViewDataSource, UICollectionViewDeleg
         cardNameField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
         cardNumberField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
         saveCardBttn.isEnabled = false
+        
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+
 
 
         
