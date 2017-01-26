@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0883571E39A2F40084DABC /* AddCardValidation.swift */; };
 		FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */; };
 		FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBF01E2DEE22001E0476 /* ViewController.swift */; };
 		FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBF21E2DEE22001E0476 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E0883571E39A2F40084DABC /* AddCardValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardValidation.swift; sourceTree = "<group>"; };
 		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE34FBF01E2DEE22001E0476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
 				FEF5582A1E3347F800C254F0 /* Providers.swift */,
 				FEF558281E31F4AB00C254F0 /* Utils.swift */,
 				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */,
 				FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */,
 				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
 				FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */,
