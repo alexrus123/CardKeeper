@@ -15,6 +15,21 @@ class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var checkboxView: UIImageView!
 }
 
+extension UITextField
+{
+    func setBottomBorder() {
+        self.borderStyle = .none
+        self.layer.backgroundColor = UIColor.white.cgColor
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    }
+    
+}
+
 extension UIViewController: UITextFieldDelegate{
 
     func addToolBar(textField: UITextField){
@@ -50,6 +65,8 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
+    @IBOutlet var infoLabel: UILabel!
+    
     var selectedCardType : Int = 0
     var currentTextField = UITextField()
     
@@ -75,12 +92,22 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         addToolBar(textField: cardNumberField)
         currentTextField.delegate = self
         
+        infoLabel.text = "Enter the customer number printed on your card and description"
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
- 
+        cardNameField.setBottomBorder()
+        cardNumberField.setBottomBorder()
+        
         //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
         //self.hideKeyboardWhenTappedAround()
+    }
+    
+    func uiTextStyles(){
+        cardNameField.layer.borderColor = UIColor.gray.cgColor
+        cardNameField.layer.borderWidth = 1.0
+        cardNameField.layer.cornerRadius = 5
     }
     
     func keyboardWillShow(notification: NSNotification) {
