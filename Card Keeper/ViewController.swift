@@ -43,9 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.textLabel!.text="No cards"}
         else{
         
-            //if (cell == nil){
-                cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-            //}
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
             
             cell.imageView?.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
             cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!
@@ -64,6 +62,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+        //Deletion will be handled here
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,10 +13,10 @@ import UIKit
 class CDhelper {
     
     var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var allCards = [Cards]()
     
     func fetchCoreData()->[Cards]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
-        var allCards = [Cards]()
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
             allCards = results as! [Cards]
@@ -25,6 +25,7 @@ class CDhelper {
                 print("Card Provider: " + singleCard.cardProvider!)
                 print("Card Name: " + singleCard.cardName!)
                 print("Card Number: " + String(singleCard.cardNumber))
+                print("Card Status: " + String(singleCard.cardStatus))
             }
             print("Total cards: " + String(allCards.count))
         } catch let error as NSError {
@@ -45,6 +46,7 @@ class CDhelper {
         cardDetails.cardProvider = cardProvider
         cardDetails.cardNumber = cardNumberVal
         cardDetails.cardName = cardName
+        cardDetails.cardStatus = true
 
         //cardDetails.cardNumber = Int64(cardNumberField.text!)!
         
@@ -57,6 +59,15 @@ class CDhelper {
             //status.text = error.localizedDescription
             print(error.localizedDescription)
         }
+    }
+    
+    func cardSoftDeletion(array: [Cards], index: IndexPath){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // 1
+        //array[index].cardStatus = false
+        // 2
+        appDelegate.saveContext()
     }
     
 }
