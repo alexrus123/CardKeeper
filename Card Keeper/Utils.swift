@@ -22,6 +22,5 @@ extension UIViewController {
 }
 
 class Utils{
-    
-    
+    //TODO move all alerts HERE
 }
