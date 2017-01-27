@@ -43,9 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.textLabel!.text="No cards"}
         else{
         
-            //if (cell == nil){
-                cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-            //}
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
             
             cell.imageView?.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
             cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!
@@ -71,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
+        //Deletion will be handled here
         }
     }
 
