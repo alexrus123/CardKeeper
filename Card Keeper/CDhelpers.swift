@@ -21,7 +21,7 @@ class CDhelper {
         fetchRequest.predicate = activeCards
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
-            //allCards = NSPredicate(format: "cardStatus = %@", true)
+            //1allCards = NSPredicate(format: "cardStatus = %@", true)
             allCards = results as! [Cards]
             
             for singleCard in allCards {
