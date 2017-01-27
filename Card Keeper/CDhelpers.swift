@@ -16,9 +16,12 @@ class CDhelper {
     var allCards = [Cards]()
     
     func fetchCoreData()->[Cards]{
+        let activeCards = NSPredicate(format: "cardStatus == true")
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
+        fetchRequest.predicate = activeCards
         do {
             let results = try managedObjectContext.fetch(fetchRequest)
+            //allCards = NSPredicate(format: "cardStatus = %@", true)
             allCards = results as! [Cards]
             
             for singleCard in allCards {
@@ -61,11 +64,12 @@ class CDhelper {
         }
     }
     
-    func cardSoftDeletion(array: [Cards], index: IndexPath){
+    func cardSoftDeletion(index:Int){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // 1
-        //array[index].cardStatus = false
+        fetchCoreData()[index].cardStatus = false
+
         // 2
         appDelegate.saveContext()
     }

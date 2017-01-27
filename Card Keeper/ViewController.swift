@@ -36,12 +36,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // create a new cell if needed or reuse an old one
-        //var cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
         
         if(returnedCards.count==0){
             cell.textLabel!.text="No cards"}
         else{
+            if (self.returnedCards[indexPath.row].cardStatus == true) {
         
             cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
             
@@ -55,6 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cellImg.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
             cell.addSubview(cellImg)
             */
+            }
         }
         return cell
     }
@@ -70,6 +71,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
         //Deletion will be handled here
+            let alert = UIAlertController(title: "Confirm", message: "You about to delete your card. Tap Ok to delete your card", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action) in
+                CDhelper().cardSoftDeletion(index: indexPath.row)
+                self.returnedCards = CDhelper().fetchCoreData()
+                self.tableView.reloadData()
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
         }
     }
 
