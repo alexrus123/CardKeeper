@@ -147,6 +147,11 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBAction func SaveNow(_ sender: UIButton) {
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!)
+        let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
+            self.performSegue(withIdentifier: "to_mainView", sender: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
