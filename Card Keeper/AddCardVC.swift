@@ -67,6 +67,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
+    @IBOutlet weak var cameraImageView: UIImageView!
     @IBOutlet weak var cameraBttn: UIBarButtonItem!
 
     
@@ -82,6 +83,21 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             self.present(imagePicker, animated: true, completion: nil)
         }else{noCameraHandler()}
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        cameraImageView.contentMode = .scaleAspectFit //3
+        cameraImageView.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func noCameraHandler(){
         let alertVC = UIAlertController(
             title: "No Camera",

@@ -216,6 +216,10 @@
                                             <action selector="SaveNow:" destination="D30-2p-X6i" eventType="touchUpInside" id="75G-5b-Vwv"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTa-cl-8MQ">
+                                        <rect key="frame" x="36" y="439" width="343" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="EBc-Cb-FDS" firstAttribute="trailing" secondItem="waJ-Ek-jp2" secondAttribute="trailing" id="127-Xq-jM5"/>
@@ -255,6 +259,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraBttn" destination="OXb-oS-UoW" id="Efc-cM-sim"/>
+                        <outlet property="cameraImageView" destination="fTa-cl-8MQ" id="ujF-k1-Lb8"/>
                         <outlet property="cardNameField" destination="NbH-oc-ySp" id="Imp-kz-0gk"/>
                         <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
                         <outlet property="collectionView" destination="EBc-Cb-FDS" id="7sU-3e-deB"/>
