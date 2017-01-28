@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Camera controls
     }
     
     // number of rows in table view
@@ -63,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+        performSegue(withIdentifier: "toEditCardView", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

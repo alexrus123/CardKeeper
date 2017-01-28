@@ -60,17 +60,43 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
+    @IBOutlet weak var cameraBttn: UIBarButtonItem!
+
     
     var selectedCardType : Int = 0
     var currentTextField = UITextField()
     
+    @IBAction func openCameraView(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }else{noCameraHandler()}
+    }
+    func noCameraHandler(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
     
     func textFieldDidChange(textField: UITextField) {
         if cardNumberField.text == "" || cardNameField.text == ""{

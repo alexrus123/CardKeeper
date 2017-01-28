@@ -18,6 +18,7 @@
 		FE34FC121E2DEE22001E0476 /* Card_KeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC111E2DEE22001E0476 /* Card_KeeperUITests.swift */; };
 		FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */; };
 		FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC211E2F530B001E0476 /* CDhelpers.swift */; };
+		FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */; };
 		FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF558281E31F4AB00C254F0 /* Utils.swift */; };
 		FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5582A1E3347F800C254F0 /* Providers.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		FE34FC131E2DEE23001E0476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		FE34FC211E2F530B001E0476 /* CDhelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDhelpers.swift; sourceTree = "<group>"; };
+		FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraHelper.swift; sourceTree = "<group>"; };
 		FEF558281E31F4AB00C254F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FEF5582A1E3347F800C254F0 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
 				FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */,
 				FE34FC211E2F530B001E0476 /* CDhelpers.swift */,
+				FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */,
 			);
 			path = "Card Keeper";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
 				FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */,
+				FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
