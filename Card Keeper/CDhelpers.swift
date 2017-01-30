@@ -38,7 +38,7 @@ class CDhelper {
         return allCards
     }
     
-    func saveToCoreData(cardProvider: String, cardName: String, cardNumberVal: Int64){
+    func saveToCoreData(cardProvider: String, cardName: String, cardNumberVal: Int64, cardBackImage: UIImage){
         let entityDescription =
             NSEntityDescription.entity(forEntityName: "Cards",
                                        in: managedObjectContext)
@@ -50,6 +50,7 @@ class CDhelper {
         cardDetails.cardNumber = cardNumberVal
         cardDetails.cardName = cardName
         cardDetails.cardStatus = true
+        cardDetails.cardBackImage = UIImageJPEGRepresentation(cardBackImage, 1.0) as NSData?
 
         //cardDetails.cardNumber = Int64(cardNumberField.text!)!
         
