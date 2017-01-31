@@ -275,7 +275,7 @@
         <!--EditCardVC-->
         <scene sceneID="Uxv-3L-5GP">
             <objects>
-                <viewController title="EditCardVC" id="Veh-hE-KxT" sceneMemberID="viewController">
+                <viewController title="EditCardVC" id="Veh-hE-KxT" customClass="EditCard" customModule="Card_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MxN-yq-3F2"/>
                         <viewControllerLayoutGuide type="bottom" id="gUy-hi-guB"/>
@@ -389,6 +389,12 @@
                             <constraint firstItem="3S9-iX-L0J" firstAttribute="centerX" secondItem="amt-gX-8Rm" secondAttribute="centerX" id="p5d-MX-R6T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="saveChangesBttn" destination="odp-zv-Lt6" id="KGg-9I-Pzd"/>
+                        <outlet property="selectedCardBackImage" destination="Spz-pZ-lG5" id="o1N-BL-iO1"/>
+                        <outlet property="selectedCardDescription" destination="P4D-wn-qqb" id="64r-ER-wFp"/>
+                        <outlet property="selectedCardNumberField" destination="Uhb-kf-jQV" id="2Js-FA-yrE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wW1-KT-i5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
