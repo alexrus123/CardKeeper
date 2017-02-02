@@ -2,10 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cards" representedClassName="Cards" syncable="YES" codeGenerationType="class">
         <attribute name="cardBackImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardName" attributeType="String" syncable="YES"/>
         <attribute name="cardNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="cardProvider" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cardStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cardProvider" attributeType="String" syncable="YES"/>
+        <attribute name="cardStatus" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Cards" positionX="-63" positionY="-18" width="128" height="120"/>

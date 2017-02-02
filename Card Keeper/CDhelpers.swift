@@ -65,6 +65,18 @@ class CDhelper {
         }
     }
     
+    func updateCoreData(cardId: Cards, cardName: String, cardNumber: Int64, cardImage:UIImage){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // 1
+        cardId.cardName = cardName
+        cardId.cardBackImage = UIImageJPEGRepresentation(cardImage, 1.0) as NSData?
+        cardId.cardNumber = cardNumber
+        
+        // 2
+        appDelegate.saveContext()
+    }
+    
     func cardSoftDeletion(index:Int){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         

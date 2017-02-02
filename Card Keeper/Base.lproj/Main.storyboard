@@ -324,11 +324,12 @@
                                             <constraint firstAttribute="height" constant="50" id="8kt-V5-LMb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <state key="normal" title="Add">
+                                        <state key="normal" title="Save">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="SaveNow:" destination="D30-2p-X6i" eventType="touchUpInside" id="3BX-gY-XdG"/>
+                                            <action selector="UpdateNow:" destination="Veh-hE-KxT" eventType="touchUpInside" id="Wpl-Z4-sTH"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Spz-pZ-lG5">
@@ -343,7 +344,7 @@
                                             <navigationItem title="Edit Card" id="ur0-ec-ZCj">
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="F61-Ql-Dqr">
                                                     <connections>
-                                                        <segue destination="BYZ-38-t0r" kind="show" id="Ig8-fk-GeG"/>
+                                                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainVC" id="Ig8-fk-GeG"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>

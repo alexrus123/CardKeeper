@@ -20,6 +20,7 @@
 		FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC211E2F530B001E0476 /* CDhelpers.swift */; };
 		FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */; };
 		FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77247F1E3F017B00FE3ED0 /* EditCard.swift */; };
+		FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */; };
 		FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF558281E31F4AB00C254F0 /* Utils.swift */; };
 		FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5582A1E3347F800C254F0 /* Providers.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		FE34FC211E2F530B001E0476 /* CDhelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDhelpers.swift; sourceTree = "<group>"; };
 		FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraHelper.swift; sourceTree = "<group>"; };
 		FE77247F1E3F017B00FE3ED0 /* EditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
+		FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
 		FEF558281E31F4AB00C254F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FEF5582A1E3347F800C254F0 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
 				FEF5582A1E3347F800C254F0 /* Providers.swift */,
 				FEF558281E31F4AB00C254F0 /* Utils.swift */,
+				FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */,
 				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
 				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 				FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */,
 				FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */,
 				FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */,
+				FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
