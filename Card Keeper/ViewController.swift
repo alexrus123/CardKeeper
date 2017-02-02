@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     let cellReuseIdentifier = "cell"
     var returnedCards = CDhelper().fetchCoreData()
+    var info : Cards?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,16 +66,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
-        performSegue(withIdentifier: "toEditCardView", sender: nil)
+        info = self.returnedCards[indexPath.row]
+        self.performSegue(withIdentifier: "toEditCardView", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        
-        if (segue.identifier == "toEditCardView") {
-            // initialize new view controller and cast it as your view controller
-            var viewController = segue.destinationViewController as AnotherViewController
-            // your new view controller should have property that will store passed value
-            viewController.passedValue = valueToPass
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if(segue.identifier == "toEditCardView") {
+            let vc = segue.destination as! EditCard
+            vc.infoReceived = info
         }
     }
     

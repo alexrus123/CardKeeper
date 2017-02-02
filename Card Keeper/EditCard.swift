@@ -14,10 +14,11 @@ class EditCard: UIViewController{
     @IBOutlet weak var selectedCardDescription: UITextField!
     @IBOutlet weak var selectedCardNumberField: UITextField!
     @IBOutlet weak var selectedCardBackImage: UIImageView!
-    //var receivedData
+    var infoReceived : Cards?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedCardDescription.text = String(describing: infoReceived?.cardName)
     }
     
     override func didReceiveMemoryWarning() {
