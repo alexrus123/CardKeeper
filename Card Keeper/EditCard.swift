@@ -14,7 +14,7 @@ class EditCard: UIViewController{
     @IBOutlet weak var selectedCardDescription: UITextField!
     @IBOutlet weak var selectedCardNumberField: UITextField!
     @IBOutlet weak var selectedCardBackImage: UIImageView!
-    var receivedData
+    //var receivedData
     
     override func viewDidLoad() {
         super.viewDidLoad()

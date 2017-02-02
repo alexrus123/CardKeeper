@@ -68,6 +68,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "toEditCardView", sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        
+        if (segue.identifier == "toEditCardView") {
+            // initialize new view controller and cast it as your view controller
+            var viewController = segue.destinationViewController as AnotherViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedValue = valueToPass
+        }
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
