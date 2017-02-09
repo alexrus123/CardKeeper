@@ -72,18 +72,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No cards saved yet. Tap &quot;Add&quot; to save your first card" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJP-CB-LcQ">
+                                <rect key="frame" x="54" y="260" width="267" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="Y3g-HE-aOy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60570312500000001" green="0.60570312500000001" blue="0.60570312500000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wJP-CB-LcQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="8kt-sd-xsy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IQI-HW-ETB" secondAttribute="bottom" constant="53" id="Api-XN-3M7"/>
                             <constraint firstItem="mCz-hG-NNk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="BHq-M6-d4c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wJP-CB-LcQ" secondAttribute="bottom" constant="281" id="LDN-Qt-0AE"/>
                             <constraint firstItem="IQI-HW-ETB" firstAttribute="top" secondItem="mCz-hG-NNk" secondAttribute="bottom" constant="28" id="TLd-2b-FrW"/>
                             <constraint firstItem="IQI-HW-ETB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YEE-gp-7mi"/>
+                            <constraint firstItem="wJP-CB-LcQ" firstAttribute="centerX" secondItem="IQI-HW-ETB" secondAttribute="centerX" id="tSb-2p-LVw"/>
                             <constraint firstItem="IQI-HW-ETB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vem-Rq-7QH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mCz-hG-NNk" secondAttribute="trailing" constant="16" id="yXa-nb-Wws"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noDataLabel" destination="wJP-CB-LcQ" id="aDL-jH-nob"/>
                         <outlet property="tableView" destination="3zB-Df-jZ0" id="uPs-Pr-BGS"/>
                         <segue destination="Veh-hE-KxT" kind="show" identifier="toEditCardView" id="GWY-Ye-dnj"/>
                     </connections>
