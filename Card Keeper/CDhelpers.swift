@@ -30,7 +30,7 @@ class CDhelper {
                 print("Card Number: " + String(singleCard.cardNumber))
                 print("Card Status: " + String(singleCard.cardStatus))
             }
-            print("Total cards: " + String(allCards.count))
+            print("Total active cards: " + String(allCards.count))
         } catch let error as NSError {
             //print("Could not fetch \(error)”),
             print(error.code)

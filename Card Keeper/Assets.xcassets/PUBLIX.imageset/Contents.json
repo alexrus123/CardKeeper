@@ -2,16 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "PUBLIX.png",
+      "filename" : "publix.jpg",
       "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {
