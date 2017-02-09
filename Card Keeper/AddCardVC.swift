@@ -61,6 +61,7 @@ extension UIViewController: UITextFieldDelegate{
 }
 
 class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
@@ -187,6 +188,10 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {
+        if(AddCardValidation().validateCardDescription(input: cardNameField.text!)==false){
+            print("validation:")
+            self.infoLabel.textColor = UIColor.red
+        }else{
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!, cardBackImage: cameraImageView.image!)
         let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
@@ -194,6 +199,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             self.performSegue(withIdentifier: "to_mainView", sender: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+        }
     }
     
     let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
