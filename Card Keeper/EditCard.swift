@@ -20,7 +20,7 @@ class EditCard: UIViewController{
         super.viewDidLoad()
         //print(String(describing: infoReceived?.objectID))
         self.selectedCardDescription.text = infoReceived?.cardName
-        self.selectedCardNumberField.text = String(describing: infoReceived?.cardNumber)
+        self.selectedCardNumberField.text = String(describing: infoReceived!.cardNumber)
         self.selectedCardBackImage.image = UIImage(data: infoReceived?.cardBackImage as! Data)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

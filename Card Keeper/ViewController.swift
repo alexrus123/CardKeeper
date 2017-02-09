@@ -22,11 +22,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Register the table view cell class and its reuse id
         self.tableView.rowHeight = 80.0
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.tableView.separatorStyle = .none
         
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
-        
         // Camera controls
     }
     
@@ -41,10 +41,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // create a new cell if needed or reuse an old one
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
         
-        if(returnedCards.count==0){
+        if(self.returnedCards.count > 0){
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
+            
+            cell.imageView?.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
+            cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!
+            cell.textLabel!.textAlignment = .right
+            cell.detailTextLabel?.text = String(describing: self.returnedCards[indexPath.row].cardNumber)
+            cell.detailTextLabel?.textAlignment = .right
+        }
+        else{
+            //if (self.returnedCards[indexPath.row].cardStatus == true) {
+            print("TOTAL CARDS HERE2:" + String(returnedCards.count))
+            cell.textLabel!.text=String("No cards")
+            return cell
+            //}
+        }
+        
+        /*
+        if(self.returnedCards.count == 0){
+            print("TOTAL CARDS HERE2:" + String(returnedCards.count))
             cell.textLabel!.text="No cards"}
         else{
-            if (self.returnedCards[indexPath.row].cardStatus == true) {
+            //if (self.returnedCards[indexPath.row].cardStatus == true) {
         
             cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
             
@@ -53,13 +72,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.textLabel!.textAlignment = .right
             cell.detailTextLabel?.text = String(describing: self.returnedCards[indexPath.row].cardNumber)
             cell.detailTextLabel?.textAlignment = .right
-            /*
-            let cellImg : UIImageView = UIImageView(frame: CGRect(x: 5, y: 5,width: 100, height: 80))
-            cellImg.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
-            cell.addSubview(cellImg)
-            */
-            }
+            //}
         }
+ */
         return cell
     }
     
