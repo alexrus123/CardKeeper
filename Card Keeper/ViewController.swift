@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     let cellReuseIdentifier = "cell"
     var returnedCards = CDhelper().fetchCoreData()
@@ -27,6 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
+        //Label when no data
+        if(self.returnedCards.count == 0){self.noDataLabel.isHidden = false}
         // Camera controls
     }
     
@@ -50,31 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.detailTextLabel?.text = String(describing: self.returnedCards[indexPath.row].cardNumber)
             cell.detailTextLabel?.textAlignment = .right
         }
-        else{
-            //if (self.returnedCards[indexPath.row].cardStatus == true) {
-            print("TOTAL CARDS HERE2:" + String(returnedCards.count))
-            cell.textLabel!.text=String("No cards")
-            return cell
-            //}
-        }
-        
-        /*
-        if(self.returnedCards.count == 0){
-            print("TOTAL CARDS HERE2:" + String(returnedCards.count))
-            cell.textLabel!.text="No cards"}
-        else{
-            //if (self.returnedCards[indexPath.row].cardStatus == true) {
-        
-            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-            
-            cell.imageView?.image = UIImage(named: self.returnedCards[indexPath.row].cardProvider!)
-            cell.textLabel!.text = self.returnedCards[indexPath.row].cardName!
-            cell.textLabel!.textAlignment = .right
-            cell.detailTextLabel?.text = String(describing: self.returnedCards[indexPath.row].cardNumber)
-            cell.detailTextLabel?.textAlignment = .right
-            //}
-        }
- */
         return cell
     }
     
@@ -105,6 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 CDhelper().cardSoftDeletion(index: indexPath.row)
                 self.returnedCards = CDhelper().fetchCoreData()
                 self.tableView.reloadData()
+                if(self.returnedCards.count == 0){self.noDataLabel.isHidden = false}
             }))
             self.present(alert, animated: true, completion: nil)
             
