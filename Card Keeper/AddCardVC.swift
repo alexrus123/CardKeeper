@@ -188,9 +188,9 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {
-        if(AddCardValidation().validateCardDescription(input: cardNameField.text!)==false){
+        if(self.cardNameField.hasText == false){
             print("validation:")
-            self.infoLabel.textColor = UIColor.red
+            //self.infoLabel.textColor = UIColor.red
         }else{
         print("Saving: " + cardNumberField.text! as Any)
         CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!, cardBackImage: cameraImageView.image!)

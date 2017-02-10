@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.rowHeight = 80.0
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         self.tableView.separatorStyle = .none
+        //self.tableView.contentInset = UIEdgeInsetsMake(0, 0, -15, 0)
         
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self

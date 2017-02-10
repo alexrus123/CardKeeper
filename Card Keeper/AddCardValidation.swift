@@ -21,8 +21,8 @@ class AddCardValidation{
     func validateCardDescription(input: String)->Bool{
         if(input.isEmpty || input==""){
             return false
-        }
-        return true
+        }else{
+            return true}
     }
     
     func validateCardNumber(input: String)->Bool{
