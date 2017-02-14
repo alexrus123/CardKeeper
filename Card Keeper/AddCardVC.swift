@@ -49,8 +49,7 @@ extension UIViewController: UITextFieldDelegate{
         textField.inputAccessoryView = toolBar
     }
     func nextPressed(){
-        //view.endEditing(true)1
-        AddCardVC().checkr()
+        view.endEditing(true)
     }
     func previousPressed(){
         view.endEditing(true)
@@ -114,45 +113,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             animated: true,
             completion: nil)
     }
-    /*
-    func textFieldDidEndEditing(textField: UITextField) {
-        if cardNumberField.text == "" || cardNameField.text == ""{
-            //saveCardBttn.isEnabled = false
-            cardNameField.backgroundColor = UIColor.blue
-            print("validation here")
-        } else {
-            saveCardBttn.isEnabled = true
-        }
-    }
-    
-    
-    func textFieldDidChange(textField: UITextField) {
-        if cardNumberField.text == "" || cardNameField.text == ""{
-            saveCardBttn.isEnabled = false
-            cardNameField.backgroundColor = UIColor.blue
-            print("validation here")
-        } else {
-            saveCardBttn.isEnabled = true
-        }
-    }
-    */
-    
-    func checkr(){
-        print("did")
-        print(String(describing: currentTextField.tag))
-        if currentTextField.tag == 1{
-            self.cardNumberField.becomeFirstResponder()
-        }
-        if currentTextField.tag == 2{
-            self.cardNameField.becomeFirstResponder()
-        }
-    }
-    /*
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        self.currentTextField = textField
-        return true
-    }
-    */
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -173,6 +134,11 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
 
         cardNameField.setBottomBorder()
         cardNumberField.setBottomBorder()
+        
+        //Open camera after tapping on uiimageview. GestureRecognition:
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openCameraView))
+        cameraImageView.isUserInteractionEnabled = true
+        cameraImageView.addGestureRecognizer(tapGestureRecognizer)
         
         //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
         //self.hideKeyboardWhenTappedAround()
@@ -203,13 +169,20 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {
-            //print("Saving: " + cardNumberField.text! as Any)
+        if (self.cardNumberField.text?.isEmpty)!{
+            let alert = UIAlertController(title: "Error", message: "Card number is required", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.infoLabel.textColor = UIColor.red
+        }
+        else{
             CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!, cardBackImage: cameraImageView.image!)
             let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
                 self.performSegue(withIdentifier: "to_mainView", sender: nil)
             }))
             self.present(alert, animated: true, completion: nil)
+        }
     }
     
     let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
@@ -239,19 +212,21 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         
         let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
         cell.checkboxView.image = UIImage(named: "Checkbox")
+        selectedCardType = indexPath.row
         
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         // handle tap events
         
         print("You deselected: " + String(indexPath.item))
+        
         let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection
             cell?.checkboxView.image = nil
         /*
         if let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection {
             cell.checkboxView.image = nil
-        }*/
-        
+        }
+        */
     }
 
 }
