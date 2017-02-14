@@ -27,6 +27,28 @@ class EditCard: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    /*
+    func rotateImage(image:UIImage)->UIImage
+    {
+        var rotatedImage = UIImage();
+        switch image.imageOrientation
+        {
+        case UIImageOrientation.right:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.down);
+            
+        case UIImageOrientation.down:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.left);
+            
+        case UIImageOrientation.left:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.up);
+            
+        default:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.right);
+        }
+        return rotatedImage;
+    }
+    */
+    
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
