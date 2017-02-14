@@ -61,6 +61,7 @@ extension UIViewController: UITextFieldDelegate{
 }
 
 class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
@@ -113,14 +114,28 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             animated: true,
             completion: nil)
     }
-    
-    func textFieldDidChange(textField: UITextField) {
+    /*
+    func textFieldDidEndEditing(textField: UITextField) {
         if cardNumberField.text == "" || cardNameField.text == ""{
-            saveCardBttn.isEnabled = false
+            //saveCardBttn.isEnabled = false
+            cardNameField.backgroundColor = UIColor.blue
+            print("validation here")
         } else {
             saveCardBttn.isEnabled = true
         }
     }
+    
+    
+    func textFieldDidChange(textField: UITextField) {
+        if cardNumberField.text == "" || cardNameField.text == ""{
+            saveCardBttn.isEnabled = false
+            cardNameField.backgroundColor = UIColor.blue
+            print("validation here")
+        } else {
+            saveCardBttn.isEnabled = true
+        }
+    }
+    */
     
     func checkr(){
         print("did")
@@ -132,17 +147,18 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             self.cardNameField.becomeFirstResponder()
         }
     }
+    /*
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         self.currentTextField = textField
         return true
     }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardNameField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
-        cardNumberField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
-        saveCardBttn.isEnabled = false
+        //cardNameField.addTarget(self, action: #selector(textFieldDidEndEditing), for: UIControlEvents.editingChanged)
+        //cardNumberField.addTarget(self, action: #selector(textFieldDidEndEditing), for: UIControlEvents.editingChanged)
+        //saveCardBttn.isEnabled = false
         
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
 
@@ -187,13 +203,13 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     @IBAction func SaveNow(_ sender: UIButton) {
-        print("Saving: " + cardNumberField.text! as Any)
-        CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!, cardBackImage: cameraImageView.image!)
-        let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
-            self.performSegue(withIdentifier: "to_mainView", sender: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+            //print("Saving: " + cardNumberField.text! as Any)
+            CDhelper().saveToCoreData(cardProvider: String(ProviderList().allProvidersArray[selectedCardType]), cardName: String(cardNameField.text!), cardNumberVal: Int64(cardNumberField.text!)!, cardBackImage: cameraImageView.image!)
+            let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
+                self.performSegue(withIdentifier: "to_mainView", sender: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
     }
     
     let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
@@ -202,7 +218,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Total Providers: " + String(ProviderList().allProvidersArray.count))
+        //print("Total Providers: " + String(ProviderList().allProvidersArray.count))
         return ProviderList().allProvidersArray.count
     }
     
@@ -210,10 +226,8 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
-        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyImageCollection
         cell.cellImageView?.image = UIImage(named: ProviderList().allProvidersArray[indexPath.item])
-        //cell.backgroundColor = UIColor.red
         return cell
     }
     
@@ -221,21 +235,23 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        selectedCardType = indexPath.item
-        print("You selected: " + String(selectedCardType))
+        print("You selected: " + String(indexPath.item))
         
         let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
         cell.checkboxView.image = UIImage(named: "Checkbox")
-        //cell?.backgroundColor = UIColor.magenta
+        
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         // handle tap events
         
         print("You deselected: " + String(indexPath.item))
+        let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection
+            cell?.checkboxView.image = nil
+        /*
+        if let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection {
+            cell.checkboxView.image = nil
+        }*/
         
-        let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
-        cell.checkboxView.image = nil
-        //cell?.backgroundColor = UIColor.magenta
     }
 
 }
