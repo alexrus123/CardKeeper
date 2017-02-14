@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var settingsBttn: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     let cellReuseIdentifier = "cell"
     var returnedCards = CDhelper().fetchCoreData()
@@ -19,6 +20,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any 1additional setup after loading the view, typically from a nib.
+        
+        //Settings button setup
+        self.settingsBttn.title = NSString(string: "\u{2699}") as String
+        /*
+        if let font = UIFont(name: "Helvetica", size: 18.0) {
+            self.settingsBttn.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState.normal)
+        }*/
+        
         
         // Register the table view cell class and its reuse id
         self.tableView.rowHeight = 80.0
