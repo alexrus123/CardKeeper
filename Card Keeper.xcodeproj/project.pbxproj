@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0883571E39A2F40084DABC /* AddCardValidation.swift */; };
+		FE17AE481E517D6600FA3747 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE17AE471E517D6600FA3747 /* SettingsView.swift */; };
 		FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */; };
 		FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBF01E2DEE22001E0476 /* ViewController.swift */; };
 		FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE34FBF21E2DEE22001E0476 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		1E0883571E39A2F40084DABC /* AddCardValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardValidation.swift; sourceTree = "<group>"; };
+		FE17AE471E517D6600FA3747 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE34FBF01E2DEE22001E0476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				FE17AE471E517D6600FA3747 /* SettingsView.swift */,
 				FE77247F1E3F017B00FE3ED0 /* EditCard.swift */,
 				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
 				FEF5582A1E3347F800C254F0 /* Providers.swift */,
@@ -298,6 +301,7 @@
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
 				FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */,
 				FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */,
+				FE17AE481E517D6600FA3747 /* SettingsView.swift in Sources */,
 				FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */,
 				FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */,
 			);
