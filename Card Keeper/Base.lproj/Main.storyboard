@@ -26,12 +26,12 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="All cards" id="LcK-U5-Jt4">
-                                        <barButtonItem key="leftBarButtonItem" title="item" style="plain" id="Krv-6L-owh" userLabel="Settings">
+                                        <barButtonItem key="leftBarButtonItem" title="item" id="Krv-6L-owh" userLabel="Settings">
                                             <connections>
                                                 <segue destination="9sD-y0-13G" kind="show" id="iEc-td-XZy"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="eva-Nf-k6R">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eva-Nf-k6R">
                                             <connections>
                                                 <segue destination="D30-2p-X6i" kind="show" id="w2Y-Gz-41H"/>
                                             </connections>
@@ -437,6 +437,6 @@
         <image name="camera" width="800" height="582"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mRD-YR-3De"/>
+        <segue reference="Ig8-fk-GeG"/>
     </inferredMetricsTieBreakers>
 </document>

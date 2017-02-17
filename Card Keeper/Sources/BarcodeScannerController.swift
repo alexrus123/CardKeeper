@@ -403,7 +403,7 @@ open class BarcodeScannerController: UIViewController {
   func settingsButtonDidPress() {
     DispatchQueue.main.async {
       if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
-        UIApplication.shared.openURL(settingsURL)
+        UIApplication.shared.open(settingsURL)
       }
     }
   }
