@@ -27,6 +27,28 @@ class EditCard: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    /*
+    func rotateImage(image:UIImage)->UIImage
+    {
+        var rotatedImage = UIImage();
+        switch image.imageOrientation
+        {
+        case UIImageOrientation.right:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.down);
+            
+        case UIImageOrientation.down:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.left);
+            
+        case UIImageOrientation.left:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.up);
+            
+        default:
+            rotatedImage = UIImage(cgImage:image.cgImage!, scale: 1, orientation:UIImageOrientation.right);
+        }
+        return rotatedImage;
+    }
+    */
+    
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -46,12 +68,19 @@ class EditCard: UIViewController{
     }
     
     @IBAction func UpdateNow(_ sender: UIButton) {
-        CDhelper().updateCoreData(cardId: infoReceived!, cardName: selectedCardDescription.text!,cardNumber: Int64(selectedCardNumberField.text!)!, cardImage: selectedCardBackImage.image!)
-        let alert = UIAlertController(title: "Congratulations", message: "Your card is saved!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
+        if (self.selectedCardNumberField.text?.isEmpty)!{
+            let alert = UIAlertController(title: "Error", message: "Card number is required", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else{
+            CDhelper().updateCoreData(cardId: infoReceived!, cardName: selectedCardDescription.text!,cardNumber: Int64(selectedCardNumberField.text!)!, cardImage: selectedCardBackImage.image!)
+            let alert = UIAlertController(title: "Congratulations", message: "Your changes are saved!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in
             self.performSegue(withIdentifier: "MainVC", sender: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
