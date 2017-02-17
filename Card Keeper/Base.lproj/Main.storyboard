@@ -109,9 +109,9 @@
                                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="to_mainView" id="mRD-YR-3De"/>
                                                             </connections>
                                                         </barButtonItem>
-                                                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="camera" id="OXb-oS-UoW">
+                                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="OXb-oS-UoW">
                                                             <connections>
-                                                                <action selector="openCameraView:" destination="D30-2p-X6i" id="jIK-T9-v0V"/>
+                                                                <action selector="openBarcodeReader:" destination="D30-2p-X6i" id="QpP-Mk-bdb"/>
                                                             </connections>
                                                         </barButtonItem>
                                                     </navigationItem>
@@ -256,7 +256,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraBttn" destination="OXb-oS-UoW" id="Efc-cM-sim"/>
+                        <outlet property="cameraBttn" destination="OXb-oS-UoW" id="GLV-4i-c0H"/>
                         <outlet property="cameraImageView" destination="fTa-cl-8MQ" id="ujF-k1-Lb8"/>
                         <outlet property="cardNameField" destination="NbH-oc-ySp" id="Imp-kz-0gk"/>
                         <outlet property="cardNumberField" destination="5cb-Uy-9Ol" id="tFe-5e-Y8B"/>
@@ -437,6 +437,6 @@
         <image name="camera" width="800" height="582"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ig8-fk-GeG"/>
+        <segue reference="mRD-YR-3De"/>
     </inferredMetricsTieBreakers>
 </document>

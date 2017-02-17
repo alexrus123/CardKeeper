@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
+
 class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var checkboxView: UIImageView!
@@ -73,6 +74,15 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     
     var selectedCardType : Int = 0
     var currentTextField = UITextField()
+    
+    @IBAction func openBarcodeReader(_ sender: Any) {
+        let controller = BarcodeScannerController()
+        controller.codeDelegate = self
+        controller.errorDelegate = self
+        controller.dismissalDelegate = self
+        
+        present(controller, animated: true, completion: nil)
+    }
     
     @IBAction func openCameraView(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -229,4 +239,31 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         */
     }
 
+}
+
+extension UIViewController: BarcodeScannerCodeDelegate {
+    
+    public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
+        print(code)
+        print(type)
+        
+        let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            controller.resetWithError()
+        }
+    }
+}
+
+extension UIViewController: BarcodeScannerErrorDelegate {
+    
+    public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
+        print(error)
+    }
+}
+
+extension UIViewController: BarcodeScannerDismissalDelegate {
+    
+    public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
