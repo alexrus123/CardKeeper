@@ -22,6 +22,15 @@
 		FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */; };
 		FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77247F1E3F017B00FE3ED0 /* EditCard.swift */; };
 		FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */; };
+		FE8EC9881E56D9DD00B2B8B0 /* flashOff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8EC97E1E56D9DD00B2B8B0 /* flashOff@3x.png */; };
+		FE8EC9891E56D9DD00B2B8B0 /* flashOn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8EC97F1E56D9DD00B2B8B0 /* flashOn@3x.png */; };
+		FE8EC98A1E56D9DD00B2B8B0 /* info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8EC9801E56D9DD00B2B8B0 /* info@3x.png */; };
+		FE8EC98B1E56D9DD00B2B8B0 /* BarcodeScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9821E56D9DD00B2B8B0 /* BarcodeScannerController.swift */; };
+		FE8EC98C1E56D9DD00B2B8B0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9831E56D9DD00B2B8B0 /* Config.swift */; };
+		FE8EC98D1E56D9DD00B2B8B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9841E56D9DD00B2B8B0 /* HeaderView.swift */; };
+		FE8EC98E1E56D9DD00B2B8B0 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9851E56D9DD00B2B8B0 /* InfoView.swift */; };
+		FE8EC98F1E56D9DD00B2B8B0 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9861E56D9DD00B2B8B0 /* State.swift */; };
+		FE8EC9901E56D9DD00B2B8B0 /* TorchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EC9871E56D9DD00B2B8B0 /* TorchMode.swift */; };
 		FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF558281E31F4AB00C254F0 /* Utils.swift */; };
 		FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5582A1E3347F800C254F0 /* Providers.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +74,15 @@
 		FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraHelper.swift; sourceTree = "<group>"; };
 		FE77247F1E3F017B00FE3ED0 /* EditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
 		FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
+		FE8EC97E1E56D9DD00B2B8B0 /* flashOff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashOff@3x.png"; sourceTree = "<group>"; };
+		FE8EC97F1E56D9DD00B2B8B0 /* flashOn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashOn@3x.png"; sourceTree = "<group>"; };
+		FE8EC9801E56D9DD00B2B8B0 /* info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@3x.png"; sourceTree = "<group>"; };
+		FE8EC9821E56D9DD00B2B8B0 /* BarcodeScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerController.swift; sourceTree = "<group>"; };
+		FE8EC9831E56D9DD00B2B8B0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FE8EC9841E56D9DD00B2B8B0 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FE8EC9851E56D9DD00B2B8B0 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		FE8EC9861E56D9DD00B2B8B0 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FE8EC9871E56D9DD00B2B8B0 /* TorchMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorchMode.swift; sourceTree = "<group>"; };
 		FEF558281E31F4AB00C254F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FEF5582A1E3347F800C254F0 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +119,7 @@
 				FE34FC051E2DEE22001E0476 /* Card KeeperTests */,
 				FE34FC101E2DEE22001E0476 /* Card KeeperUITests */,
 				FE34FBEC1E2DEE22001E0476 /* Products */,
+				FE8EC9681E56D62700B2B8B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +136,8 @@
 		FE34FBED1E2DEE22001E0476 /* Card Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				FE8EC97D1E56D9DD00B2B8B0 /* Images */,
+				FE8EC9811E56D9DD00B2B8B0 /* Sources */,
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
@@ -153,6 +174,36 @@
 				FE34FC131E2DEE23001E0476 /* Info.plist */,
 			);
 			path = "Card KeeperUITests";
+			sourceTree = "<group>";
+		};
+		FE8EC9681E56D62700B2B8B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE8EC97D1E56D9DD00B2B8B0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FE8EC97E1E56D9DD00B2B8B0 /* flashOff@3x.png */,
+				FE8EC97F1E56D9DD00B2B8B0 /* flashOn@3x.png */,
+				FE8EC9801E56D9DD00B2B8B0 /* info@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FE8EC9811E56D9DD00B2B8B0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FE8EC9821E56D9DD00B2B8B0 /* BarcodeScannerController.swift */,
+				FE8EC9831E56D9DD00B2B8B0 /* Config.swift */,
+				FE8EC9841E56D9DD00B2B8B0 /* HeaderView.swift */,
+				FE8EC9851E56D9DD00B2B8B0 /* InfoView.swift */,
+				FE8EC9861E56D9DD00B2B8B0 /* State.swift */,
+				FE8EC9871E56D9DD00B2B8B0 /* TorchMode.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +318,9 @@
 			files = (
 				FE34FBFC1E2DEE22001E0476 /* LaunchScreen.storyboard in Resources */,
 				FE34FBF91E2DEE22001E0476 /* Assets.xcassets in Resources */,
+				FE8EC9891E56D9DD00B2B8B0 /* flashOn@3x.png in Resources */,
+				FE8EC98A1E56D9DD00B2B8B0 /* info@3x.png in Resources */,
+				FE8EC9881E56D9DD00B2B8B0 /* flashOff@3x.png in Resources */,
 				FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,15 +346,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8EC98E1E56D9DD00B2B8B0 /* InfoView.swift in Sources */,
+				FE8EC98B1E56D9DD00B2B8B0 /* BarcodeScannerController.swift in Sources */,
 				1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */,
+				FE8EC9901E56D9DD00B2B8B0 /* TorchMode.swift in Sources */,
 				FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */,
+				FE8EC98C1E56D9DD00B2B8B0 /* Config.swift in Sources */,
 				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
 				FE34FBF71E2DEE22001E0476 /* Card_Keeper.xcdatamodeld in Sources */,
 				FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */,
 				FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
 				FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */,
+				FE8EC98D1E56D9DD00B2B8B0 /* HeaderView.swift in Sources */,
 				FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */,
+				FE8EC98F1E56D9DD00B2B8B0 /* State.swift in Sources */,
 				FE17AE481E517D6600FA3747 /* SettingsView.swift in Sources */,
 				FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */,
 				FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */,
