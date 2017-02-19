@@ -60,23 +60,35 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
+class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
     
     @IBOutlet weak var saveCardBttn: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet weak var cameraImageView: UIImageView!
-    @IBOutlet weak var cameraBttn: UIBarButtonItem!
-    let returnedCode: Int = 0
+    //@IBOutlet weak var cameraBttn: UIBarButtonItem!
+    @IBOutlet weak var selectedProviderTableView: UITableView!
+    @IBOutlet weak var scanBttn: UIButton!
 
+    let cellReuseIdentifier = "selectedProviderCell"
     
-    var selectedCardType : Int = 0
+    var selectedCardType : Int = -1
     var currentTextField = UITextField()
     
+    /*
     @IBAction func openBarcodeReader(_ sender: Any) {
+        let controller = BarcodeScannerController()
+        controller.codeDelegate = self
+        controller.errorDelegate = self
+        controller.dismissalDelegate = self
+        
+        present(controller, animated: true, completion: nil)
+    }
+    */
+    
+    @IBAction func newAction(_ sender: Any) {
         let controller = BarcodeScannerController()
         controller.codeDelegate = self
         controller.errorDelegate = self
@@ -128,10 +140,6 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //cardNameField.addTarget(self, action: #selector(textFieldDidEndEditing), for: UIControlEvents.editingChanged)
-        //cardNumberField.addTarget(self, action: #selector(textFieldDidEndEditing), for: UIControlEvents.editingChanged)
-        //saveCardBttn.isEnabled = false
-        
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
 
         addToolBar(textField: cardNameField)
@@ -151,8 +159,8 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         cameraImageView.isUserInteractionEnabled = true
         cameraImageView.addGestureRecognizer(tapGestureRecognizer)
         
-        //TODO: hide keyboard when tapped. The line below will break uicollectionviewcell tap
-        //self.hideKeyboardWhenTappedAround()
+        //Selected Card Type table configuration
+        selectedProviderTableView.alwaysBounceVertical = false
     }
     
     func uiTextStyles(){
@@ -195,55 +203,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             }))
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    func doNext(){
-        self.performSegue(withIdentifier: "to_mainView", sender: nil)
-    }
-    
-    let reuseIdentifier = "cell1" // also enter this string as the cell identifier in the storyboard
-    
-    // MARK: - UICollectionViewDataSource protocol
-    
-    // tell the collection view how many cells to make
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //print("Total Providers: " + String(ProviderList().allProvidersArray.count))
-        return ProviderList().allProvidersArray.count
-    }
-    
-    // make a cell for each cell index path
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyImageCollection
-        cell.cellImageView?.image = UIImage(named: ProviderList().allProvidersArray[indexPath.item])
-        return cell
-    }
-    
-    // MARK: - UICollectionViewDelegate protocol
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        print("You selected: " + String(indexPath.item))
-        
-        let cell = collectionView.cellForItem(at: indexPath) as! MyImageCollection
-        cell.checkboxView.image = UIImage(named: "Checkbox")
-        selectedCardType = indexPath.row
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        // handle tap events
-        
-        print("You deselected: " + String(indexPath.item))
-        
-        let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection
-            cell?.checkboxView.image = nil
-        /*
-        if let cell = collectionView.cellForItem(at: indexPath) as? MyImageCollection {
-            cell.checkboxView.image = nil
-        }
-        */
-    }
+    }   
     
     public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
         print(code)
@@ -264,4 +224,42 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
+    //TableView Configuration
+    // number of rows in table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    // create a cell for each table view row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // create a new cell if needed or reuse an old one
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
+        if(selectedCardType == -1){
+            cell.textLabel?.text = "Please select card type"
+            cell.textLabel?.textColor = UIColor.gray
+        }
+        else{
+            cell.imageView?.image = UIImage(named: ProviderList().allProvidersArray[selectedCardType])
+            cell.textLabel?.text = ProviderList().allProvidersArray[selectedCardType]
+        }
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
+    
+    // method to run when table view cell is tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+        //goToSelectCardView
+        self.performSegue(withIdentifier: "goToSelectCardView", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+
 }

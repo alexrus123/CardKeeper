@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0883571E39A2F40084DABC /* AddCardValidation.swift */; };
+		FE12A56B1E59A34C00491ABE /* SelectCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */; };
+		FE12A56D1E59A45A00491ABE /* SegueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12A56C1E59A45A00491ABE /* SegueController.swift */; };
 		FE17AE481E517D6600FA3747 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE17AE471E517D6600FA3747 /* SettingsView.swift */; };
 		FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */; };
 		FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FBF01E2DEE22001E0476 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		1E0883571E39A2F40084DABC /* AddCardValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardValidation.swift; sourceTree = "<group>"; };
+		FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCardViewController.swift; sourceTree = "<group>"; };
+		FE12A56C1E59A45A00491ABE /* SegueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueController.swift; sourceTree = "<group>"; };
 		FE17AE471E517D6600FA3747 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FE34FBEB1E2DEE22001E0476 /* Card Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				FE34FBEE1E2DEE22001E0476 /* AppDelegate.swift */,
 				FE34FBF01E2DEE22001E0476 /* ViewController.swift */,
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
+				FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */,
 				FE17AE471E517D6600FA3747 /* SettingsView.swift */,
 				FE77247F1E3F017B00FE3ED0 /* EditCard.swift */,
 				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
@@ -148,6 +153,7 @@
 				FEF558281E31F4AB00C254F0 /* Utils.swift */,
 				FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */,
 				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
+				FE12A56C1E59A45A00491ABE /* SegueController.swift */,
 				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
 				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
@@ -347,9 +353,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8EC98E1E56D9DD00B2B8B0 /* InfoView.swift in Sources */,
+				FE12A56B1E59A34C00491ABE /* SelectCardViewController.swift in Sources */,
 				FE8EC98B1E56D9DD00B2B8B0 /* BarcodeScannerController.swift in Sources */,
 				1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */,
 				FE8EC9901E56D9DD00B2B8B0 /* TorchMode.swift in Sources */,
+				FE12A56D1E59A45A00491ABE /* SegueController.swift in Sources */,
 				FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */,
 				FE8EC98C1E56D9DD00B2B8B0 /* Config.swift in Sources */,
 				FE34FBF11E2DEE22001E0476 /* ViewController.swift in Sources */,
