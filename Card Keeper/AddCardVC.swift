@@ -247,10 +247,14 @@ extension UIViewController: BarcodeScannerCodeDelegate {
         print(code)
         print(type)
         
+        
+        
         let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            controller.dismiss(animated: true, completion: nil)
             controller.resetWithError()
         }
+        
     }
 }
 
