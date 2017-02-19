@@ -60,7 +60,7 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
     
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -70,6 +70,7 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet weak var cameraImageView: UIImageView!
     @IBOutlet weak var cameraBttn: UIBarButtonItem!
+    let returnedCode: Int = 0
 
     
     var selectedCardType : Int = 0
@@ -238,16 +239,11 @@ class AddCardVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         }
         */
     }
-
-}
-
-extension UIViewController: BarcodeScannerCodeDelegate {
     
     public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
         print(code)
         print(type)
-        
-        
+        cardNumberField.text = String(code)
         
         let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -256,16 +252,9 @@ extension UIViewController: BarcodeScannerCodeDelegate {
         }
         
     }
-}
-
-extension UIViewController: BarcodeScannerErrorDelegate {
-    
     public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
         print(error)
     }
-}
-
-extension UIViewController: BarcodeScannerDismissalDelegate {
     
     public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
         controller.dismiss(animated: true, completion: nil)
