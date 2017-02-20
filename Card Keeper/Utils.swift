@@ -23,17 +23,8 @@ extension UIViewController {
 
 class Utils{
     //TODO move all alerts HERE
-    /*
-    func showAlert(controllerTitle: String, controllerMessage: String, secondButtonTitle: String, secondButtonAction: ){
-        let alert = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
-        alert.addAction(UIAlertAction(title: secondButtonTitle, style: UIAlertActionStyle.default, handler:{(action) in}))
-        /*
-         {(action) in
-         self.performSegue(withIdentifier: "to_mainView", sender: nil)
-         }
-        */
-        //self.present(alert, animated: true, completion: nil)
+    
+    func showAlert(controllerTitle: String, controllerMessage: String, secondButtonTitle: String, secondButtonAction: Any){
+        
     }
-    */
 }
