@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-
 class MyImageCollection: UICollectionViewCell{
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var checkboxView: UIImageView!
@@ -147,7 +146,11 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         currentTextField.delegate = self
         
         infoLabel.text = "Enter the customer number printed on your card and description"
-        
+        /*
+        let n : Int64 = 4763019336664
+        infoLabel.font = UIFont (name: "eanbwrp72tt.ttf", size:106)
+        infoLabel.text = String(n)
+        */
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -155,9 +158,11 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         cardNumberField.setBottomBorder()
         
         //Open camera after tapping on uiimageview. GestureRecognition:
+        /*
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openCameraView))
         cameraImageView.isUserInteractionEnabled = true
         cameraImageView.addGestureRecognizer(tapGestureRecognizer)
+        */
         
         //Selected Card Type table configuration
         selectedProviderTableView.alwaysBounceVertical = false
@@ -209,6 +214,15 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         print(code)
         print(type)
         cardNumberField.text = String(code)
+        if (type == "org.gs1.EAN-13"){
+            let gen = RSEAN13Generator.init()
+            //gen.fillColor = UIColor.white
+            //gen.strokeColor = UIColor.black
+            cameraImageView.image = gen.generateCode(String(code), machineReadableCodeObjectType: "AVMetadataObjectTypeEAN13Code")
+        }
+        if (type == "org.gs1.EAN-18"){
+            
+        }
         
         let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -262,4 +276,16 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
     }
 
+}
+class Barcode {
+    
+    class func fromString(string : String) -> UIImage? {
+        
+        let data = string.data(using: String.Encoding.ascii)
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        return UIImage(ciImage: (filter?.outputImage)!)
+        
+    }
+    
 }
