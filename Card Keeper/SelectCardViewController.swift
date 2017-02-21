@@ -48,7 +48,6 @@ class SelectCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if(segue.identifier == "backWithSelectedCard") {
             let vc = segue.destination as! AddCardVC
-            //vc.selectedCardType =
             vc.selectedCardType = selectedRow
         }
     }

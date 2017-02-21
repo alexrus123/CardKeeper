@@ -59,33 +59,21 @@ extension UIViewController: UITextFieldDelegate{
     }
 }
 
-class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
+class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
     
+    @IBOutlet weak var providerImage: UIImageView!
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet weak var cameraImageView: UIImageView!
-    //@IBOutlet weak var cameraBttn: UIBarButtonItem!
-    @IBOutlet weak var selectedProviderTableView: UITableView!
     @IBOutlet weak var scanBttn: UIButton!
 
     let cellReuseIdentifier = "selectedProviderCell"
     
     var selectedCardType : Int = -1
     var currentTextField = UITextField()
-    
-    /*
-    @IBAction func openBarcodeReader(_ sender: Any) {
-        let controller = BarcodeScannerController()
-        controller.codeDelegate = self
-        controller.errorDelegate = self
-        controller.dismissalDelegate = self
-        
-        present(controller, animated: true, completion: nil)
-    }
-    */
     
     @IBAction func newAction(_ sender: Any) {
         let controller = BarcodeScannerController()
@@ -135,6 +123,12 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             animated: true,
             completion: nil)
     }
+    
+    func openSelectProviderView(){
+        //presentViewController(self.SelectCardVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "showPickNow", sender: nil)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,12 +139,8 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         addToolBar(textField: cardNumberField)
         currentTextField.delegate = self
         
-        infoLabel.text = "Enter the customer number printed on your card and description"
-        /*
-        let n : Int64 = 4763019336664
-        infoLabel.font = UIFont (name: "eanbwrp72tt.ttf", size:106)
-        infoLabel.text = String(n)
-        */
+        infoLabel.text = "Enter the customer number printed on your card and description. Tap scan to add number automatically"
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -158,14 +148,13 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         cardNumberField.setBottomBorder()
         
         //Open camera after tapping on uiimageview. GestureRecognition:
-        /*
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openCameraView))
-        cameraImageView.isUserInteractionEnabled = true
-        cameraImageView.addGestureRecognizer(tapGestureRecognizer)
-        */
-        
-        //Selected Card Type table configuration
-        selectedProviderTableView.alwaysBounceVertical = false
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openSelectProviderView))
+        providerImage.isUserInteractionEnabled = true
+        providerImage.addGestureRecognizer(tapGestureRecognizer)
+        if (selectedCardType > -1){
+            providerImage.image = UIImage (named: ProviderList().allProvidersArray[selectedCardType])
+        }
+ 
     }
     
     func uiTextStyles(){
@@ -237,43 +226,6 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
         controller.dismiss(animated: true, completion: nil)
-    }
-    
-    //TableView Configuration
-    // number of rows in table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // create a new cell if needed or reuse an old one
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-        if(selectedCardType == -1){
-            cell.textLabel?.text = "Please select card type"
-            cell.textLabel?.textColor = UIColor.gray
-        }
-        else{
-            cell.imageView?.image = UIImage(named: ProviderList().allProvidersArray[selectedCardType])
-            cell.textLabel?.text = ProviderList().allProvidersArray[selectedCardType]
-        }
-        cell.accessoryType = .disclosureIndicator
-        return cell
-    }
-    
-    // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-        //goToSelectCardView
-        self.performSegue(withIdentifier: "goToSelectCardView", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
     }
 
 }

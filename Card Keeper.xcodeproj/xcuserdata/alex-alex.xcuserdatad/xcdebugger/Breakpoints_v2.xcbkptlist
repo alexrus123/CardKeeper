@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509271607.23562"
+            timestampString = "509337826.10536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509278265.9995"
+            timestampString = "509338774.271278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "SaveNow(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/SelectCardViewController.swift"
-            timestampString = "509195331.51727"
+            timestampString = "509338491.140922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509278372.742891"
+            timestampString = "509338774.271278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "barcodeScanner(_:didCaptureCode:type:)"
             landmarkType = "7">
          </BreakpointContent>
