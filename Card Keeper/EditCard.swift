@@ -22,10 +22,16 @@ class EditCard: UIViewController{
     var infoReceived : Cards?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        //print(String(describing: infoReceived?.objectID))
         self.selectedProviderImage.image = UIImage (named: (infoReceived?.cardProvider)!)
         self.selectedCardDescription.text = infoReceived?.cardName
+        
+        self.selectedCardDescription.setBottomBorder()
+        addToolBar(textField: selectedCardDescription)
+        self.selectedCardNumberField.setBottomBorder()
+        addToolBar(textField: selectedCardNumberField)
+        
         self.selectedCardNumberField.text = String(describing: infoReceived!.cardNumber)
         self.selectedCardBackImage.image = UIImage(data: infoReceived?.cardBackImage as! Data)
         

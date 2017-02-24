@@ -11,13 +11,6 @@ import UIKit
 
 class AddCardValidation{
     
-    /*
-    func validateCardDescription()->Bool{
-        var validated: Bool
-        validated = true
-        return validated
-    }
-    */
     func validateCardDescription(input: String)->Bool{
         if(input.isEmpty || input==""){
             return false

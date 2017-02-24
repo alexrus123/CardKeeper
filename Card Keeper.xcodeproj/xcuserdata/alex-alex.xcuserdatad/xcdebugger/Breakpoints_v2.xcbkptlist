@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509615546.638092"
+            timestampString = "509617984.039366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/EditCard.swift"
-            timestampString = "509615148.016702"
+            timestampString = "509617984.039366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509271607.23562"
+            timestampString = "509617984.039366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "AddCardVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509615546.638092"
+            timestampString = "509617984.039366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "SaveNow(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Card Keeper/AddCardVC.swift"
-            timestampString = "509615546.638092"
+            timestampString = "509617984.039366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "barcodeScanner(_:didCaptureCode:type:)"
             landmarkType = "7">
          </BreakpointContent>
