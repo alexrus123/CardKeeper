@@ -22,6 +22,7 @@
 		FE34FC201E2F501C001E0476 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */; };
 		FE34FC221E2F530B001E0476 /* CDhelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE34FC211E2F530B001E0476 /* CDhelpers.swift */; };
 		FE6A6E7F1E3C805D0081D52C /* cameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */; };
+		FE71EC381E602AA300D57122 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71EC371E602AA300D57122 /* UIExtensions.swift */; };
 		FE732BC61E5AE62E00AFFE0A /* ContextMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE732BB01E5AE62E00AFFE0A /* ContextMaker.m */; };
 		FE732BC71E5AE62E00AFFE0A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE732BB11E5AE62E00AFFE0A /* Info.plist */; };
 		FE732BC81E5AE62E00AFFE0A /* RSCode128Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE732BB31E5AE62E00AFFE0A /* RSCode128Generator.swift */; };
@@ -98,6 +99,7 @@
 		FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		FE34FC211E2F530B001E0476 /* CDhelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDhelpers.swift; sourceTree = "<group>"; };
 		FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraHelper.swift; sourceTree = "<group>"; };
+		FE71EC371E602AA300D57122 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		FE732BAF1E5AE62E00AFFE0A /* ContextMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextMaker.h; sourceTree = "<group>"; };
 		FE732BB01E5AE62E00AFFE0A /* ContextMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMaker.m; sourceTree = "<group>"; };
 		FE732BB11E5AE62E00AFFE0A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,16 +198,12 @@
 				FE77247F1E3F017B00FE3ED0 /* EditCard.swift */,
 				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
 				FEF5582A1E3347F800C254F0 /* Providers.swift */,
-				FEF558281E31F4AB00C254F0 /* Utils.swift */,
-				FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */,
+				FE71EC391E602B1400D57122 /* Utils */,
 				FE34FC1F1E2F501C001E0476 /* AddCardVC.swift */,
-				FE12A56C1E59A45A00491ABE /* SegueController.swift */,
 				FE34FBF81E2DEE22001E0476 /* Assets.xcassets */,
 				FE34FBFA1E2DEE22001E0476 /* LaunchScreen.storyboard */,
 				FE34FBFD1E2DEE22001E0476 /* Info.plist */,
 				FE34FBF51E2DEE22001E0476 /* Card_Keeper.xcdatamodeld */,
-				FE34FC211E2F530B001E0476 /* CDhelpers.swift */,
-				FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */,
 			);
 			path = "Card Keeper";
 			sourceTree = "<group>";
@@ -226,6 +224,19 @@
 				FE34FC131E2DEE23001E0476 /* Info.plist */,
 			);
 			path = "Card KeeperUITests";
+			sourceTree = "<group>";
+		};
+		FE71EC391E602B1400D57122 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FEF558281E31F4AB00C254F0 /* Utils.swift */,
+				FE71EC371E602AA300D57122 /* UIExtensions.swift */,
+				FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */,
+				FE12A56C1E59A45A00491ABE /* SegueController.swift */,
+				FE34FC211E2F530B001E0476 /* CDhelpers.swift */,
+				FE6A6E7E1E3C805D0081D52C /* cameraHelper.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		FE732BAE1E5AE62E00AFFE0A /* Source-generator */ = {
@@ -455,6 +466,7 @@
 				FE732BD11E5AE62E00AFFE0A /* RSEANGenerator.swift in Sources */,
 				FE732BD71E5AE62E00AFFE0A /* RSUnifiedCodeValidator.swift in Sources */,
 				FE34FBEF1E2DEE22001E0476 /* AppDelegate.swift in Sources */,
+				FE71EC381E602AA300D57122 /* UIExtensions.swift in Sources */,
 				FE732BD01E5AE62E00AFFE0A /* RSCornersLayer.swift in Sources */,
 				FE732BD31E5AE62E00AFFE0A /* RSFocusMarkLayer.swift in Sources */,
 				FE732BDA1E5AE62E00AFFE0A /* UIColorExtension.swift in Sources */,
