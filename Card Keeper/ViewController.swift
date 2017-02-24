@@ -16,31 +16,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellReuseIdentifier = "cell"
     var returnedCards = CDhelper().fetchCoreData()
     var info : Cards?
+    var currentIndex : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any 1additional setup after loading the view, typically from a nib.
         
         //Settings button setup
         self.settingsBttn.title = NSString(string: "\u{2699}") as String
-        /*
-        if let font = UIFont(name: "Helvetica", size: 18.0) {
-            self.settingsBttn.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState.normal)
-        }*/
-        
         
         // Register the table view cell class and its reuse id
         self.tableView.rowHeight = 80.0
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         self.tableView.separatorStyle = .none
-        //self.tableView.contentInset = UIEdgeInsetsMake(0, 0, -15, 0)
         
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
         //Label when no data
-        if(self.returnedCards.count == 0){self.noDataLabel.isHidden = false}
-        // Camera controls
+        if(self.returnedCards.count == 0){
+            self.noDataLabel.isHidden = false
+        }
     }
     
     // number of rows in table view
@@ -70,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
         info = self.returnedCards[indexPath.row]
+        currentIndex = indexPath.row
         self.performSegue(withIdentifier: "toEditCardView", sender: self)
     }
     
@@ -77,6 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(segue.identifier == "toEditCardView") {
             let vc = segue.destination as! EditCard
             vc.infoReceived = info
+            vc.indexTapped = currentIndex
         }
     }
     
@@ -96,7 +93,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if(self.returnedCards.count == 0){self.noDataLabel.isHidden = false}
             }))
             self.present(alert, animated: true, completion: nil)
-            
         }
     }
 
