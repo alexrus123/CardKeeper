@@ -10,15 +10,21 @@ import Foundation
 import UIKit
 
 class EditCard: UIViewController{
+    
     @IBOutlet weak var saveChangesBttn: UIButton!
     @IBOutlet weak var selectedCardDescription: UITextField!
+    @IBOutlet weak var selectedProviderImage: UIImageView!
     @IBOutlet weak var selectedCardNumberField: UITextField!
     @IBOutlet weak var selectedCardBackImage: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    var indexTapped : Int = 0
     var infoReceived : Cards?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(String(describing: infoReceived?.objectID))
+        self.selectedProviderImage.image = UIImage (named: (infoReceived?.cardProvider)!)
         self.selectedCardDescription.text = infoReceived?.cardName
         self.selectedCardNumberField.text = String(describing: infoReceived!.cardNumber)
         self.selectedCardBackImage.image = UIImage(data: infoReceived?.cardBackImage as! Data)
@@ -81,6 +87,18 @@ class EditCard: UIViewController{
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func deleteButtonEditVC(_ sender: UIButton) {
+        print("delete")
+        let alert = UIAlertController(title: "Confirm", message: "You about to delete your card. Tap Ok to delete your card", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action) in
+            CDhelper().cardSoftDeletion(index: self.indexTapped)
+            self.performSegue(withIdentifier: "MainVC", sender: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

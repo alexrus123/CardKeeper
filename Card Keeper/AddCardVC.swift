@@ -76,14 +76,18 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var currentTextField = UITextField()
     
     @IBAction func newAction(_ sender: Any) {
-        let controller = BarcodeScannerController()
-        controller.codeDelegate = self
-        controller.errorDelegate = self
-        controller.dismissalDelegate = self
-        
-        present(controller, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let controller = BarcodeScannerController()
+            controller.codeDelegate = self
+            controller.errorDelegate = self
+            controller.dismissalDelegate = self
+            present(controller, animated: true, completion: nil)
+        }
+        else{
+            noCameraHandler()
+        }
     }
-    
+    /*
     @IBAction func openCameraView(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
@@ -93,7 +97,7 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             self.present(imagePicker, animated: true, completion: nil)
         }else{noCameraHandler()}
     }
-    
+    */
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {

@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellReuseIdentifier = "cell"
     var returnedCards = CDhelper().fetchCoreData()
     var info : Cards?
+    var currentIndex : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
         info = self.returnedCards[indexPath.row]
+        currentIndex = indexPath.row
         self.performSegue(withIdentifier: "toEditCardView", sender: self)
     }
     
@@ -77,6 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(segue.identifier == "toEditCardView") {
             let vc = segue.destination as! EditCard
             vc.infoReceived = info
+            vc.indexTapped = currentIndex
         }
     }
     
