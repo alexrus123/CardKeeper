@@ -10,65 +10,15 @@ import Foundation
 import UIKit
 import CoreData
 
-class MyImageCollection: UICollectionViewCell{
-    @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var checkboxView: UIImageView!
-}
-
-extension UITextField{
-    func setBottomBorder() {
-        self.borderStyle = .none
-        self.layer.backgroundColor = UIColor.white.cgColor
-        
-        self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
-    }
+class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
     
-}
-
-
-extension UIViewController: UITextFieldDelegate{
-
-    func addToolBar(textField: UITextField){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(UIViewController.donePressed))
-        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.nextPressed))
-        let previousButton = UIBarButtonItem(title: "Prev", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.previousPressed))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([previousButton, nextButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        
-        textField.delegate = self
-        textField.inputAccessoryView = toolBar
-    }
-    func nextPressed(){
-        view.endEditing(true)
-    }
-    func previousPressed(){
-        view.endEditing(true)
-    }
-    func donePressed(){
-        view.endEditing(true)
-    }
-}
-
-class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
-    
+    @IBOutlet weak var providerImage: UIImageView!
     @IBOutlet weak var saveCardBttn: UIButton!
     @IBOutlet weak var cardNumberField: UITextField!
     @IBOutlet weak var cardNameField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet weak var cameraImageView: UIImageView!
-    //@IBOutlet weak var cameraBttn: UIBarButtonItem!
-    @IBOutlet weak var selectedProviderTableView: UITableView!
     @IBOutlet weak var scanBttn: UIButton!
 
     let cellReuseIdentifier = "selectedProviderCell"
@@ -76,36 +26,19 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     var selectedCardType : Int = -1
     var currentTextField = UITextField()
     
-    /*
-    @IBAction func openBarcodeReader(_ sender: Any) {
-        let controller = BarcodeScannerController()
-        controller.codeDelegate = self
-        controller.errorDelegate = self
-        controller.dismissalDelegate = self
-        
-        present(controller, animated: true, completion: nil)
-    }
-    */
-    
     @IBAction func newAction(_ sender: Any) {
-        let controller = BarcodeScannerController()
-        controller.codeDelegate = self
-        controller.errorDelegate = self
-        controller.dismissalDelegate = self
-        
-        present(controller, animated: true, completion: nil)
-    }
-    
-    @IBAction func openCameraView(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }else{noCameraHandler()}
+            let controller = BarcodeScannerController()
+            controller.codeDelegate = self
+            controller.errorDelegate = self
+            controller.dismissalDelegate = self
+            present(controller, animated: true, completion: nil)
+        }
+        else{
+            noCameraHandler()
+        }
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
@@ -135,22 +68,24 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             animated: true,
             completion: nil)
     }
+    
+    func openSelectProviderView(){
+        //presentViewController(self.SelectCardVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "showPickNow", sender: nil)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
 
         addToolBar(textField: cardNameField)
         addToolBar(textField: cardNumberField)
         currentTextField.delegate = self
         
-        infoLabel.text = "Enter the customer number printed on your card and description"
-        /*
-        let n : Int64 = 4763019336664
-        infoLabel.font = UIFont (name: "eanbwrp72tt.ttf", size:106)
-        infoLabel.text = String(n)
-        */
+        infoLabel.text = "Enter the customer number printed on your card and description. Tap scan to add number automatically"
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -158,27 +93,28 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         cardNumberField.setBottomBorder()
         
         //Open camera after tapping on uiimageview. GestureRecognition:
-        /*
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openCameraView))
-        cameraImageView.isUserInteractionEnabled = true
-        cameraImageView.addGestureRecognizer(tapGestureRecognizer)
-        */
-        
-        //Selected Card Type table configuration
-        selectedProviderTableView.alwaysBounceVertical = false
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openSelectProviderView))
+        providerImage.isUserInteractionEnabled = true
+        providerImage.addGestureRecognizer(tapGestureRecognizer)
+        if (selectedCardType > -1){
+            providerImage.image = UIImage (named: ProviderList().allProvidersArray[selectedCardType])
+        }
+ 
     }
     
+    /*
     func uiTextStyles(){
         cardNameField.layer.borderColor = UIColor.gray.cgColor
         cardNameField.layer.borderWidth = 1.0
         cardNameField.layer.cornerRadius = 5
     }
+    */
     
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height/2
+                self.view.frame.origin.y -= keyboardSize.height
             }
         }
         
@@ -187,7 +123,7 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height/2
+                self.view.frame.origin.y += keyboardSize.height
             }
         }
     }
@@ -237,43 +173,6 @@ class AddCardVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
         controller.dismiss(animated: true, completion: nil)
-    }
-    
-    //TableView Configuration
-    // number of rows in table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // create a new cell if needed or reuse an old one
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-        if(selectedCardType == -1){
-            cell.textLabel?.text = "Please select card type"
-            cell.textLabel?.textColor = UIColor.gray
-        }
-        else{
-            cell.imageView?.image = UIImage(named: ProviderList().allProvidersArray[selectedCardType])
-            cell.textLabel?.text = ProviderList().allProvidersArray[selectedCardType]
-        }
-        cell.accessoryType = .disclosureIndicator
-        return cell
-    }
-    
-    // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-        //goToSelectCardView
-        self.performSegue(withIdentifier: "goToSelectCardView", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
     }
 
 }
