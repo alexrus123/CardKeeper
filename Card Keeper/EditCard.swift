@@ -22,7 +22,7 @@ class EditCard: UIViewController{
     var infoReceived : Cards?
     
     override func viewDidLoad() {
-        
+    
         super.viewDidLoad()
         self.selectedProviderImage.image = UIImage (named: (infoReceived?.cardProvider)!)
         self.selectedCardDescription.text = infoReceived?.cardName
@@ -96,7 +96,7 @@ class EditCard: UIViewController{
     }
     
     @IBAction func deleteButtonEditVC(_ sender: UIButton) {
-        print("delete")
+    
         let alert = UIAlertController(title: "Confirm", message: "You about to delete your card. Tap Ok to delete your card", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
         
@@ -105,6 +105,7 @@ class EditCard: UIViewController{
             self.performSegue(withIdentifier: "MainVC", sender: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+ 
     }
     
     override func didReceiveMemoryWarning() {

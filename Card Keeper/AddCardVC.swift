@@ -102,14 +102,6 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
  
     }
     
-    /*
-    func uiTextStyles(){
-        cardNameField.layer.borderColor = UIColor.gray.cgColor
-        cardNameField.layer.borderWidth = 1.0
-        cardNameField.layer.cornerRadius = 5
-    }
-    */
-    
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

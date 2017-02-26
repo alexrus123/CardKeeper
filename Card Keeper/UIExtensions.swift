@@ -31,22 +31,26 @@ extension UIViewController: UITextFieldDelegate{
         toolBar.isTranslucent = true
         toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(UIViewController.donePressed))
+        /*
         let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.nextPressed))
         let previousButton = UIBarButtonItem(title: "Prev", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIViewController.previousPressed))
+        */
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([previousButton, nextButton, spaceButton, doneButton], animated: false)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
         
         textField.delegate = self
         textField.inputAccessoryView = toolBar
     }
+    /*
     func nextPressed(){
         view.endEditing(true)
     }
     func previousPressed(){
         view.endEditing(true)
     }
+    */
     func donePressed(){
         view.endEditing(true)
     }

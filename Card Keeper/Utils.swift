@@ -26,7 +26,14 @@ extension UIViewController {
 class Utils{
     //TODO move all alerts HERE
     
-    func showAlert(controllerTitle: String, controllerMessage: String, secondButtonTitle: String, secondButtonAction: Any){
+    public func showAlert(controllerTitle: String, controllerMessage: String, secondButtonTitle: String, secondButtonAction: UIAlertAction) -> UIAlertController{
         
+        let alert = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: secondButtonTitle, style: UIAlertActionStyle.default, handler: {(action) in secondButtonAction} ) )
+        
+        return alert
     }
 }
