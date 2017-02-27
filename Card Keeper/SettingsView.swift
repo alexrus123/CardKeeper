@@ -8,9 +8,13 @@
 
 import Foundation
 import UIKit
+import waterwheel
 
-class Setting : UIViewController{
+class Settings : UIViewController{
     
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginBttn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

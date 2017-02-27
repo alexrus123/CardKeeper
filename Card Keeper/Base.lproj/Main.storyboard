@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="902" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="Win-38-zZ5">
             <objects>
-                <viewController id="9sD-y0-13G" sceneMemberID="viewController">
+                <viewController id="9sD-y0-13G" customClass="Settings" customModule="Card_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LL3-5m-8uR"/>
                         <viewControllerLayoutGuide type="bottom" id="oOy-NY-Jbp"/>
@@ -335,6 +335,11 @@
                             <constraint firstItem="lwW-1u-7Ag" firstAttribute="top" secondItem="Zsw-0P-XjB" secondAttribute="bottom" constant="8" symbolic="YES" id="yPB-uP-gAg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginBttn" destination="lwW-1u-7Ag" id="fnB-jg-YWM"/>
+                        <outlet property="passwordField" destination="Zsw-0P-XjB" id="4De-oj-u11"/>
+                        <outlet property="usernameField" destination="qcZ-nE-sai" id="Ocz-bt-rOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCe-g3-65D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
