@@ -318,6 +318,9 @@
                                     <constraint firstAttribute="width" constant="129" id="mdc-3l-6WQ"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginNow:" destination="9sD-y0-13G" eventType="touchUpInside" id="qaA-ji-qIl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

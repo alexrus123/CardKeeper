@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import waterwheel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        waterwheel.setDrupalURL("http://kids.qatsys.com")
+        waterwheel.nodeGet(nodeId: "11", params: nil) { (success, response, json, error) in
+            print(json)
+        }
         return true
     }
 
