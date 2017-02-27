@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06362674A962B0CD971EAD6D /* Pods_Card_Keeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DDACC0A38ABE463801937 /* Pods_Card_Keeper.framework */; };
 		1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0883571E39A2F40084DABC /* AddCardValidation.swift */; };
+		310912D97EF65BD997F31885 /* Pods_Card_KeeperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6ADB6B52A7AAF2654FBC /* Pods_Card_KeeperUITests.framework */; };
+		88EE4C0015710945D32476BB /* Pods_Card_KeeperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0D43D358E840D713175A2C /* Pods_Card_KeeperTests.framework */; };
 		FE12A56B1E59A34C00491ABE /* SelectCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */; };
 		FE12A56D1E59A45A00491ABE /* SegueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12A56C1E59A45A00491ABE /* SegueController.swift */; };
 		FE17AE481E517D6600FA3747 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE17AE471E517D6600FA3747 /* SettingsView.swift */; };
@@ -78,7 +81,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D9AE0AC4D9B61C697C9625D /* Pods-Card Keeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Keeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Card Keeper/Pods-Card Keeper.release.xcconfig"; sourceTree = "<group>"; };
+		10C8F7D036A9772E059C5C1F /* Pods-Card KeeperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card KeeperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Card KeeperTests/Pods-Card KeeperTests.release.xcconfig"; sourceTree = "<group>"; };
+		171DDACC0A38ABE463801937 /* Pods_Card_Keeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_Keeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E0883571E39A2F40084DABC /* AddCardValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardValidation.swift; sourceTree = "<group>"; };
+		2BB9FFDF0B9AAB4CF70B92D4 /* Pods-Card KeeperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card KeeperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Card KeeperTests/Pods-Card KeeperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F0B0988BBEC57E2585B1E06 /* Pods-Card KeeperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card KeeperUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Card KeeperUITests/Pods-Card KeeperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		52DB6ADB6B52A7AAF2654FBC /* Pods_Card_KeeperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_KeeperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4773CB454F2806ADA5C2078 /* Pods-Card Keeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card Keeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Card Keeper/Pods-Card Keeper.debug.xcconfig"; sourceTree = "<group>"; };
+		DBB9A7A0B3F49E636599178A /* Pods-Card KeeperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card KeeperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Card KeeperUITests/Pods-Card KeeperUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF0D43D358E840D713175A2C /* Pods_Card_KeeperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Card_KeeperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCardViewController.swift; sourceTree = "<group>"; };
 		FE12A56C1E59A45A00491ABE /* SegueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueController.swift; sourceTree = "<group>"; };
 		FE17AE471E517D6600FA3747 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -143,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06362674A962B0CD971EAD6D /* Pods_Card_Keeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88EE4C0015710945D32476BB /* Pods_Card_KeeperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,12 +171,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310912D97EF65BD997F31885 /* Pods_Card_KeeperUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		724DD1D657CA0D6F39E79212 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4773CB454F2806ADA5C2078 /* Pods-Card Keeper.debug.xcconfig */,
+				0D9AE0AC4D9B61C697C9625D /* Pods-Card Keeper.release.xcconfig */,
+				2BB9FFDF0B9AAB4CF70B92D4 /* Pods-Card KeeperTests.debug.xcconfig */,
+				10C8F7D036A9772E059C5C1F /* Pods-Card KeeperTests.release.xcconfig */,
+				3F0B0988BBEC57E2585B1E06 /* Pods-Card KeeperUITests.debug.xcconfig */,
+				DBB9A7A0B3F49E636599178A /* Pods-Card KeeperUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FE34FBE21E2DEE22001E0476 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +199,7 @@
 				FE34FC101E2DEE22001E0476 /* Card KeeperUITests */,
 				FE34FBEC1E2DEE22001E0476 /* Products */,
 				FE8EC9681E56D62700B2B8B0 /* Frameworks */,
+				724DD1D657CA0D6F39E79212 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,6 +300,9 @@
 		FE8EC9681E56D62700B2B8B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				171DDACC0A38ABE463801937 /* Pods_Card_Keeper.framework */,
+				EF0D43D358E840D713175A2C /* Pods_Card_KeeperTests.framework */,
+				52DB6ADB6B52A7AAF2654FBC /* Pods_Card_KeeperUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -306,9 +338,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE34FC161E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card Keeper" */;
 			buildPhases = (
+				D805C4EED4605B5A5E5AA5B7 /* [CP] Check Pods Manifest.lock */,
 				FE34FBE71E2DEE22001E0476 /* Sources */,
 				FE34FBE81E2DEE22001E0476 /* Frameworks */,
 				FE34FBE91E2DEE22001E0476 /* Resources */,
+				9B1CBDB7AEDAFB573D14121B /* [CP] Embed Pods Frameworks */,
+				F25D96324D131F52E7EEA865 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,9 +358,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE34FC191E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperTests" */;
 			buildPhases = (
+				29D650DB2F6EF36CC56ED1DC /* [CP] Check Pods Manifest.lock */,
 				FE34FBFE1E2DEE22001E0476 /* Sources */,
 				FE34FBFF1E2DEE22001E0476 /* Frameworks */,
 				FE34FC001E2DEE22001E0476 /* Resources */,
+				16420767A9C82178B7AA7AAD /* [CP] Embed Pods Frameworks */,
+				A049B7088DF65A1CF1085C7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,9 +379,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE34FC1C1E2DEE23001E0476 /* Build configuration list for PBXNativeTarget "Card KeeperUITests" */;
 			buildPhases = (
+				E2A84C6C46E13CFE4AE24EAA /* [CP] Check Pods Manifest.lock */,
 				FE34FC091E2DEE22001E0476 /* Sources */,
 				FE34FC0A1E2DEE22001E0476 /* Frameworks */,
 				FE34FC0B1E2DEE22001E0476 /* Resources */,
+				20B86D7268782852F3425958 /* [CP] Embed Pods Frameworks */,
+				295D5D1FD0EC75C59E465553 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,6 +476,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16420767A9C82178B7AA7AAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card KeeperTests/Pods-Card KeeperTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20B86D7268782852F3425958 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card KeeperUITests/Pods-Card KeeperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		295D5D1FD0EC75C59E465553 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card KeeperUITests/Pods-Card KeeperUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29D650DB2F6EF36CC56ED1DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9B1CBDB7AEDAFB573D14121B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card Keeper/Pods-Card Keeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A049B7088DF65A1CF1085C7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card KeeperTests/Pods-Card KeeperTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D805C4EED4605B5A5E5AA5B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A84C6C46E13CFE4AE24EAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F25D96324D131F52E7EEA865 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Card Keeper/Pods-Card Keeper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE34FBE71E2DEE22001E0476 /* Sources */ = {
@@ -632,6 +811,7 @@
 		};
 		FE34FC171E2DEE23001E0476 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4773CB454F2806ADA5C2078 /* Pods-Card Keeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -648,6 +828,7 @@
 		};
 		FE34FC181E2DEE23001E0476 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D9AE0AC4D9B61C697C9625D /* Pods-Card Keeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -664,6 +845,7 @@
 		};
 		FE34FC1A1E2DEE23001E0476 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BB9FFDF0B9AAB4CF70B92D4 /* Pods-Card KeeperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -679,6 +861,7 @@
 		};
 		FE34FC1B1E2DEE23001E0476 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10C8F7D036A9772E059C5C1F /* Pods-Card KeeperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -694,6 +877,7 @@
 		};
 		FE34FC1D1E2DEE23001E0476 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F0B0988BBEC57E2585B1E06 /* Pods-Card KeeperUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8C68XCPWDF;
@@ -708,6 +892,7 @@
 		};
 		FE34FC1E1E2DEE23001E0476 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBB9A7A0B3F49E636599178A /* Pods-Card KeeperUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8C68XCPWDF;
