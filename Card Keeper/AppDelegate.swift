@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import waterwheel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

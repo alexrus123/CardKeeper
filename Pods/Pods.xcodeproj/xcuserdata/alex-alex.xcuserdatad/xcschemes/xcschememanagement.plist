@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -15,11 +15,6 @@
 			<false/>
 		</dict>
 		<key>BarcodeScanner.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,17 +39,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftyUserDefaults.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>waterwheel.xcscheme</key>
+		<key>drupal-ios-sdk.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,12 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>075E675475B1CB428DF5FC1F94B40499</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1690174677B9CE5DBC026E5DBA204342</key>
+		<key>1ED8BE8BD6A53853974A60E1AC8B1019</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F43FC1B6433530AE98EC2E9F424F22A</key>
+		<key>3871BEBE9FB694B220C7A7F335DCA099</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>4B11384F916B3A7E26F4645CCDD561CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A6062C62BC2D47D1D15F5486DDA0675</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,22 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED51EA03A779331D4BCDDAC8F6850D9C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>EFAAB8230EA40F1F8FE61671783A5DEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F16B053FBA6E1BE23389C133C89A7BE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -28,6 +28,11 @@
 		FE71EC381E602AA300D57122 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71EC371E602AA300D57122 /* UIExtensions.swift */; };
 		FE7724801E3F017B00FE3ED0 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77247F1E3F017B00FE3ED0 /* EditCard.swift */; };
 		FE7870EB1E4315BD00D0C2F0 /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */; };
+		FED9B89F1E7FBE6F0040CA88 /* SettingsItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED9B89E1E7FBE6F0040CA88 /* SettingsItemsList.swift */; };
+		FED9B8A11E7FC2540040CA88 /* TermsOfUse.strings in Resources */ = {isa = PBXBuildFile; fileRef = FED9B8A01E7FC2540040CA88 /* TermsOfUse.strings */; };
+		FED9B8A41E7FC3010040CA88 /* About.strings in Resources */ = {isa = PBXBuildFile; fileRef = FED9B8A31E7FC3010040CA88 /* About.strings */; };
+		FED9B8A61E7FC3110040CA88 /* PrivacyPolicy.strings in Resources */ = {isa = PBXBuildFile; fileRef = FED9B8A51E7FC3110040CA88 /* PrivacyPolicy.strings */; };
+		FED9B8A81E7FC3350040CA88 /* RSBarcodes_Swift.strings in Resources */ = {isa = PBXBuildFile; fileRef = FED9B8A71E7FC3350040CA88 /* RSBarcodes_Swift.strings */; };
 		FEF558291E31F4AB00C254F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF558281E31F4AB00C254F0 /* Utils.swift */; };
 		FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5582A1E3347F800C254F0 /* Providers.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +88,11 @@
 		FE71EC371E602AA300D57122 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		FE77247F1E3F017B00FE3ED0 /* EditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
 		FE7870EA1E4315BD00D0C2F0 /* KeyboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
+		FED9B89E1E7FBE6F0040CA88 /* SettingsItemsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItemsList.swift; sourceTree = "<group>"; };
+		FED9B8A01E7FC2540040CA88 /* TermsOfUse.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = TermsOfUse.strings; path = "Card Keeper/TermsOfUse.strings"; sourceTree = "<group>"; };
+		FED9B8A31E7FC3010040CA88 /* About.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = About.strings; sourceTree = "<group>"; };
+		FED9B8A51E7FC3110040CA88 /* PrivacyPolicy.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = PrivacyPolicy.strings; sourceTree = "<group>"; };
+		FED9B8A71E7FC3350040CA88 /* RSBarcodes_Swift.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = RSBarcodes_Swift.strings; sourceTree = "<group>"; };
 		FEF558281E31F4AB00C254F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FEF5582A1E3347F800C254F0 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +141,7 @@
 		FE34FBE21E2DEE22001E0476 = {
 			isa = PBXGroup;
 			children = (
+				FED9B8A21E7FC2E60040CA88 /* Strings */,
 				FE34FBED1E2DEE22001E0476 /* Card Keeper */,
 				FE34FC051E2DEE22001E0476 /* Card KeeperTests */,
 				FE34FC101E2DEE22001E0476 /* Card KeeperUITests */,
@@ -159,6 +170,7 @@
 				FE34FBF21E2DEE22001E0476 /* Main.storyboard */,
 				FE12A56A1E59A34C00491ABE /* SelectCardViewController.swift */,
 				FE17AE471E517D6600FA3747 /* SettingsView.swift */,
+				FED9B89E1E7FBE6F0040CA88 /* SettingsItemsList.swift */,
 				FE77247F1E3F017B00FE3ED0 /* EditCard.swift */,
 				1E0883571E39A2F40084DABC /* AddCardValidation.swift */,
 				FEF5582A1E3347F800C254F0 /* Providers.swift */,
@@ -210,6 +222,17 @@
 				52DB6ADB6B52A7AAF2654FBC /* Pods_Card_KeeperUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FED9B8A21E7FC2E60040CA88 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				FED9B8A01E7FC2540040CA88 /* TermsOfUse.strings */,
+				FED9B8A71E7FC3350040CA88 /* RSBarcodes_Swift.strings */,
+				FED9B8A31E7FC3010040CA88 /* About.strings */,
+				FED9B8A51E7FC3110040CA88 /* PrivacyPolicy.strings */,
+			);
+			name = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +354,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED9B8A41E7FC3010040CA88 /* About.strings in Resources */,
 				FE34FBFC1E2DEE22001E0476 /* LaunchScreen.storyboard in Resources */,
 				FE34FBF91E2DEE22001E0476 /* Assets.xcassets in Resources */,
+				FED9B8A61E7FC3110040CA88 /* PrivacyPolicy.strings in Resources */,
 				FE34FBF41E2DEE22001E0476 /* Main.storyboard in Resources */,
+				FED9B8A81E7FC3350040CA88 /* RSBarcodes_Swift.strings in Resources */,
+				FED9B8A11E7FC2540040CA88 /* TermsOfUse.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE12A56B1E59A34C00491ABE /* SelectCardViewController.swift in Sources */,
+				FED9B89F1E7FBE6F0040CA88 /* SettingsItemsList.swift in Sources */,
 				1E0883581E39A2F40084DABC /* AddCardValidation.swift in Sources */,
 				FE12A56D1E59A45A00491ABE /* SegueController.swift in Sources */,
 				FEF5582B1E3347F800C254F0 /* Providers.swift in Sources */,
