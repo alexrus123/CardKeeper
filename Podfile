@@ -7,7 +7,10 @@ target 'Card Keeper' do
 
   # Pods for Card Keeper
 
-  pod 'waterwheel'
+#pod 'waterwheel'
+  pod 'drupal-ios-sdk', '~> 2.1'
+  pod 'RSBarcodes_Swift', '~> 3.0.3'
+  pod 'BarcodeScanner'
 
   target 'Card KeeperTests' do
     inherit! :search_paths

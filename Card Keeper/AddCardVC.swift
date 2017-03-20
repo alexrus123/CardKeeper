@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import CoreData
+import BarcodeScanner
+import RSBarcodes_Swift
+import AVFoundation
 
 class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate  {
     
@@ -142,8 +145,11 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         print(code)
         print(type)
         cardNumberField.text = String(code)
+        
+        /*
         if (type == "org.gs1.EAN-13"){
             let gen = RSEAN13Generator.init()
+            //let gen = RSEAN13Generator.init()
             //gen.fillColor = UIColor.white
             //gen.strokeColor = UIColor.black
             cameraImageView.image = gen.generateCode(String(code), machineReadableCodeObjectType: "AVMetadataObjectTypeEAN13Code")
@@ -151,6 +157,7 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         if (type == "org.gs1.EAN-18"){
             
         }
+        */
         
         let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -158,6 +165,18 @@ class AddCardVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             controller.resetWithError()
         }
         
+    }
+    
+    func drawBracode(code: String, barcodeType: String){
+        let gen = RSUnifiedCodeGenerator.shared
+        gen.fillColor = UIColor.white
+        gen.strokeColor = UIColor.black
+        print ("generating image with barcode: " + code)
+        
+        if let image = gen.generateCode(code, machineReadableCodeObjectType: AVMetadataObjectTypeEAN13Code) {
+            self.cameraImageView.layer.borderWidth = 1
+            self.cameraImageView.image = RSAbstractCodeGenerator.resizeImage(image, targetSize: self.cameraImageView.bounds.size, contentMode: UIViewContentMode.bottomRight)
+        }
     }
     public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
         print(error)

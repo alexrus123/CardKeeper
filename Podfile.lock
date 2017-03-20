@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.4.0)
+  - BarcodeScanner (2.0.0)
   - ObjectMapper (2.2.4)
+  - RSBarcodes_Swift (3.0.3)
   - SwiftyJSON (3.1.0)
   - SwiftyUserDefaults (3.0.0)
   - waterwheel (4.3.1):
@@ -10,15 +12,19 @@ PODS:
     - SwiftyUserDefaults
 
 DEPENDENCIES:
+  - BarcodeScanner
+  - RSBarcodes_Swift (~> 3.0.3)
   - waterwheel
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  BarcodeScanner: 266ab4b479d407b74bc4b473fa5020b4523ad9e3
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
+  RSBarcodes_Swift: 3b4a9c2e81fe9f435a26f18a1b8b826665e7cf89
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   waterwheel: b9a2a2f78ce869f59b68b743fe20d93c572cc4a9
 
-PODFILE CHECKSUM: 8e54c2721fedcdb93cc7f6f3e3086239a76ed936
+PODFILE CHECKSUM: a5a759cd62cdd9cc7ffb8d8fd14cd96ffc15022c
 
 COCOAPODS: 1.2.0
